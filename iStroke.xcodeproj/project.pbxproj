@@ -21,12 +21,12 @@
 		E750793714E2E70F00964C83 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E750793814E2E70F00964C83 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E750793914E2E70F00964C83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E750793C14E2E70F00964C83 /* iStroke-Info.plist */ = {isa = PBXFileReference; path = "iStroke-Info.plist"; sourceTree = "<group>"; };
+		E750793C14E2E70F00964C83 /* iStroke-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iStroke-Info.plist"; sourceTree = "<group>"; };
 		E750793E14E2E70F00964C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E750794014E2E70F00964C83 /* iStroke-Prefix.pch */ = {isa = PBXFileReference; path = "iStroke-Prefix.pch"; sourceTree = "<group>"; };
+		E750794014E2E70F00964C83 /* iStroke-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iStroke-Prefix.pch"; sourceTree = "<group>"; };
 		E750794114E2E70F00964C83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E750794414E2E70F00964C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		E750794614E2E70F00964C83 /* iStrokeAppDelegate.h */ = {isa = PBXFileReference; path = iStrokeAppDelegate.h; sourceTree = "<group>"; };
+		E750794614E2E70F00964C83 /* iStrokeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iStrokeAppDelegate.h; sourceTree = "<group>"; };
 		E750794714E2E70F00964C83 /* iStrokeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iStrokeAppDelegate.m; sourceTree = "<group>"; };
 		E750794A14E2E70F00964C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
