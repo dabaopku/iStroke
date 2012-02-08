@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E719195B14E2F70C00193FDB /* EventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = E719195A14E2F70C00193FDB /* EventListener.m */; };
 		E750793514E2E70F00964C83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E750793414E2E70F00964C83 /* Cocoa.framework */; };
 		E750793F14E2E70F00964C83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E750793D14E2E70F00964C83 /* InfoPlist.strings */; };
 		E750794214E2E70F00964C83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E750794114E2E70F00964C83 /* main.m */; };
@@ -30,6 +31,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E719195914E2F70C00193FDB /* EventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListener.h; sourceTree = "<group>"; };
+		E719195A14E2F70C00193FDB /* EventListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListener.m; sourceTree = "<group>"; };
 		E750793014E2E70F00964C83 /* iStroke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStroke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E750793414E2E70F00964C83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E750793714E2E70F00964C83 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -45,7 +48,6 @@
 		E750794A14E2E70F00964C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E750795814E2ED8F00964C83 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		E750795B14E2ED9000964C83 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		E750795D14E2ED9000964C83 /* test.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = test.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,8 @@
 				E750794714E2E70F00964C83 /* iStrokeAppDelegate.m */,
 				E750794914E2E70F00964C83 /* MainMenu.xib */,
 				E750793B14E2E70F00964C83 /* Supporting Files */,
+				E719195914E2F70C00193FDB /* EventListener.h */,
+				E719195A14E2F70C00193FDB /* EventListener.m */,
 			);
 			path = iStroke;
 			sourceTree = "<group>";
@@ -133,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				E750795B14E2ED9000964C83 /* main.cpp */,
-				E750795D14E2ED9000964C83 /* test.1 */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			files = (
 				E750794214E2E70F00964C83 /* main.m in Sources */,
 				E750794814E2E70F00964C83 /* iStrokeAppDelegate.m in Sources */,
+				E719195B14E2F70C00193FDB /* EventListener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +369,7 @@
 				E750795014E2E70F00964C83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E750795E14E2ED9000964C83 /* Build configuration list for PBXNativeTarget "test" */ = {
 			isa = XCConfigurationList;
@@ -373,6 +378,7 @@
 				E750796014E2ED9000964C83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

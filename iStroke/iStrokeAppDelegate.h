@@ -7,10 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "EventListener.h"
 
 @interface iStrokeAppDelegate : NSObject <NSApplicationDelegate> {
 @private
     NSWindow *window;
+    
+    EventListener * listener;
 }
 
 @property (assign) IBOutlet NSWindow *window;
