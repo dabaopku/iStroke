@@ -9,9 +9,20 @@
 #import <Foundation/Foundation.h>
 #import <ApplicationServices/ApplicationServices.h>
 
+typedef enum
+{
+    LeftButton=0,
+    RightButton,
+    MiddleButton,
+}  MouseButton;
+
 @interface EventListener : NSObject {
     CFMachPortRef eventTap;  
     CFRunLoopSourceRef runLoopSource;
+    CGEventMask eventFilter;
+    
+
+    MouseButton mouseButton;
 }
 
 -(id) init;
@@ -22,5 +33,7 @@
                       :(CGEventType) type
                       :(CGEventRef) event
                       :(void *) refcon;
+
+-(void) setMouseButton:(MouseButton) button;
 
 @end

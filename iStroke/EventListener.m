@@ -14,7 +14,7 @@
 static EventListener *sharedObj = nil;
 
 CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRef event, void *refcon) {
-    [[EventListener alloc]
+    [sharedObj
         callback:proxy :type :event :refcon];
     return event;
 }
@@ -27,9 +27,9 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRe
     self = [super init];
     
     if(self){
-        eventTap = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, 0, kCGEventMaskForAllEvents, myCGEventCallback, NULL);
-        runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0);
-        CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, kCFRunLoopCommonModes);
+        eventTap=nil;
+        runLoopSource=nil;
+        [self setMouseButton:RightButton];
     }
     
     sharedObj=self;
@@ -51,5 +51,43 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRe
 {
     printf("%u\n", (uint32_t)type);
     return event; 
+}
+
+-(void) setMouseButton:(MouseButton)button
+{
+    mouseButton=button;
+    switch (mouseButton) {
+        case LeftButton:
+            eventFilter=CGEventMaskBit(kCGEventLeftMouseDown)
+                | CGEventMaskBit(kCGEventLeftMouseDragged)
+                | CGEventMaskBit(kCGEventLeftMouseUp)
+                | CGEventMaskBit(kCGEventMouseMoved);
+            break;
+        case RightButton:
+            eventFilter=CGEventMaskBit(kCGEventRightMouseDown)
+            | CGEventMaskBit(kCGEventRightMouseDragged)
+            | CGEventMaskBit(kCGEventRightMouseUp)
+            | CGEventMaskBit(kCGEventMouseMoved);
+            break;
+        case MiddleButton:
+            eventFilter=CGEventMaskBit(kCGEventOtherMouseDown)
+            | CGEventMaskBit(kCGEventOtherMouseDragged)
+            | CGEventMaskBit(kCGEventOtherMouseUp)
+            | CGEventMaskBit(kCGEventMouseMoved);
+            break;
+        default:
+            eventFilter=kCGEventNull;
+            break;
+    }
+    
+    if (eventTap) {
+        [self stop];
+    }
+    if (runLoopSource) {
+        CFRunLoopRemoveSource(CFRunLoopGetCurrent(), runLoopSource, kCFRunLoopCommonModes);
+    }
+    eventTap = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, 0, eventFilter, myCGEventCallback, NULL);
+    runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0);
+    CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, kCFRunLoopCommonModes);
 }
 @end

@@ -13,9 +13,11 @@
 @private
     NSWindow *window;
     
-    EventListener * listener;
+    EventListener * eventListener;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+
+-(IBAction) toggleTrack:(NSButton *)sender;
 
 @end

@@ -16,8 +16,21 @@
 {
     // Insert code here to initialize your application
     
-    listener=[[EventListener alloc] init];
-    [listener start];
+    eventListener=[[EventListener alloc] init];
+    [eventListener start];
 }
 
+-(IBAction) toggleTrack:(NSButton *)sender
+{
+    switch ([sender state]) {
+        case NSOnState:
+            [eventListener start];
+            break;
+        case NSOffState:
+            [eventListener stop];
+            break;
+        default:
+            break;
+    }
+}
 @end
