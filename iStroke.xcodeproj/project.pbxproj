@@ -13,7 +13,21 @@
 		E750794514E2E70F00964C83 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E750794314E2E70F00964C83 /* Credits.rtf */; };
 		E750794814E2E70F00964C83 /* iStrokeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E750794714E2E70F00964C83 /* iStrokeAppDelegate.m */; };
 		E750794B14E2E70F00964C83 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E750794914E2E70F00964C83 /* MainMenu.xib */; };
+		E750795C14E2ED9000964C83 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E750795B14E2ED9000964C83 /* main.cpp */; };
+		E750796314E2EE3200964C83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E750793414E2E70F00964C83 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E750795614E2ED8F00964C83 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E750793014E2E70F00964C83 /* iStroke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStroke.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +43,9 @@
 		E750794614E2E70F00964C83 /* iStrokeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iStrokeAppDelegate.h; sourceTree = "<group>"; };
 		E750794714E2E70F00964C83 /* iStrokeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iStrokeAppDelegate.m; sourceTree = "<group>"; };
 		E750794A14E2E70F00964C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E750795814E2ED8F00964C83 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
+		E750795B14E2ED9000964C83 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E750795D14E2ED9000964C83 /* test.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = test.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +57,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E750795514E2ED8F00964C83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750796314E2EE3200964C83 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -47,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				E750793A14E2E70F00964C83 /* iStroke */,
+				E750795A14E2ED9000964C83 /* test */,
 				E750793314E2E70F00964C83 /* Frameworks */,
 				E750793114E2E70F00964C83 /* Products */,
 			);
@@ -56,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				E750793014E2E70F00964C83 /* iStroke.app */,
+				E750795814E2ED8F00964C83 /* test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +129,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E750795A14E2ED9000964C83 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				E750795B14E2ED9000964C83 /* main.cpp */,
+				E750795D14E2ED9000964C83 /* test.1 */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,11 +158,31 @@
 			productReference = E750793014E2E70F00964C83 /* iStroke.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E750795714E2ED8F00964C83 /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E750795E14E2ED9000964C83 /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				E750795414E2ED8F00964C83 /* Sources */,
+				E750795514E2ED8F00964C83 /* Frameworks */,
+				E750795614E2ED8F00964C83 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test;
+			productName = test;
+			productReference = E750795814E2ED8F00964C83 /* test */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E750792714E2E70F00964C83 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = PKU;
+			};
 			buildConfigurationList = E750792A14E2E70F00964C83 /* Build configuration list for PBXProject "iStroke" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -140,6 +196,7 @@
 			projectRoot = "";
 			targets = (
 				E750792F14E2E70F00964C83 /* iStroke */,
+				E750795714E2ED8F00964C83 /* test */,
 			);
 		};
 /* End PBXProject section */
@@ -164,6 +221,14 @@
 			files = (
 				E750794214E2E70F00964C83 /* main.m in Sources */,
 				E750794814E2E70F00964C83 /* iStrokeAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E750795414E2ED8F00964C83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750795C14E2ED9000964C83 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +324,28 @@
 			};
 			name = Release;
 		};
+		E750795F14E2ED9000964C83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E750796014E2ED9000964C83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -276,6 +363,14 @@
 			buildConfigurations = (
 				E750794F14E2E70F00964C83 /* Debug */,
 				E750795014E2E70F00964C83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E750795E14E2ED9000964C83 /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E750795F14E2ED9000964C83 /* Debug */,
+				E750796014E2ED9000964C83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
