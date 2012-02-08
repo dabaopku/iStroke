@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E750793514E2E70F00964C83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E750793414E2E70F00964C83 /* Cocoa.framework */; };
+		E750793F14E2E70F00964C83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E750793D14E2E70F00964C83 /* InfoPlist.strings */; };
+		E750794214E2E70F00964C83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E750794114E2E70F00964C83 /* main.m */; };
+		E750794514E2E70F00964C83 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E750794314E2E70F00964C83 /* Credits.rtf */; };
+		E750794814E2E70F00964C83 /* iStrokeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E750794714E2E70F00964C83 /* iStrokeAppDelegate.m */; };
+		E750794B14E2E70F00964C83 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E750794914E2E70F00964C83 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E750793014E2E70F00964C83 /* iStroke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStroke.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E750793414E2E70F00964C83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E750793714E2E70F00964C83 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E750793814E2E70F00964C83 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E750793914E2E70F00964C83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E750793C14E2E70F00964C83 /* iStroke-Info.plist */ = {isa = PBXFileReference; path = "iStroke-Info.plist"; sourceTree = "<group>"; };
+		E750793E14E2E70F00964C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E750794014E2E70F00964C83 /* iStroke-Prefix.pch */ = {isa = PBXFileReference; path = "iStroke-Prefix.pch"; sourceTree = "<group>"; };
+		E750794114E2E70F00964C83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E750794414E2E70F00964C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E750794614E2E70F00964C83 /* iStrokeAppDelegate.h */ = {isa = PBXFileReference; path = iStrokeAppDelegate.h; sourceTree = "<group>"; };
+		E750794714E2E70F00964C83 /* iStrokeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iStrokeAppDelegate.m; sourceTree = "<group>"; };
+		E750794A14E2E70F00964C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E750792D14E2E70F00964C83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750793514E2E70F00964C83 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E750792514E2E70F00964C83 = {
+			isa = PBXGroup;
+			children = (
+				E750793A14E2E70F00964C83 /* iStroke */,
+				E750793314E2E70F00964C83 /* Frameworks */,
+				E750793114E2E70F00964C83 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E750793114E2E70F00964C83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E750793014E2E70F00964C83 /* iStroke.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E750793314E2E70F00964C83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E750793414E2E70F00964C83 /* Cocoa.framework */,
+				E750793614E2E70F00964C83 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E750793614E2E70F00964C83 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E750793714E2E70F00964C83 /* AppKit.framework */,
+				E750793814E2E70F00964C83 /* CoreData.framework */,
+				E750793914E2E70F00964C83 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E750793A14E2E70F00964C83 /* iStroke */ = {
+			isa = PBXGroup;
+			children = (
+				E750794614E2E70F00964C83 /* iStrokeAppDelegate.h */,
+				E750794714E2E70F00964C83 /* iStrokeAppDelegate.m */,
+				E750794914E2E70F00964C83 /* MainMenu.xib */,
+				E750793B14E2E70F00964C83 /* Supporting Files */,
+			);
+			path = iStroke;
+			sourceTree = "<group>";
+		};
+		E750793B14E2E70F00964C83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E750793C14E2E70F00964C83 /* iStroke-Info.plist */,
+				E750793D14E2E70F00964C83 /* InfoPlist.strings */,
+				E750794014E2E70F00964C83 /* iStroke-Prefix.pch */,
+				E750794114E2E70F00964C83 /* main.m */,
+				E750794314E2E70F00964C83 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E750792F14E2E70F00964C83 /* iStroke */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E750794E14E2E70F00964C83 /* Build configuration list for PBXNativeTarget "iStroke" */;
+			buildPhases = (
+				E750792C14E2E70F00964C83 /* Sources */,
+				E750792D14E2E70F00964C83 /* Frameworks */,
+				E750792E14E2E70F00964C83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iStroke;
+			productName = iStroke;
+			productReference = E750793014E2E70F00964C83 /* iStroke.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E750792714E2E70F00964C83 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E750792A14E2E70F00964C83 /* Build configuration list for PBXProject "iStroke" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E750792514E2E70F00964C83;
+			productRefGroup = E750793114E2E70F00964C83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E750792F14E2E70F00964C83 /* iStroke */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E750792E14E2E70F00964C83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750793F14E2E70F00964C83 /* InfoPlist.strings in Resources */,
+				E750794514E2E70F00964C83 /* Credits.rtf in Resources */,
+				E750794B14E2E70F00964C83 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E750792C14E2E70F00964C83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750794214E2E70F00964C83 /* main.m in Sources */,
+				E750794814E2E70F00964C83 /* iStrokeAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E750793D14E2E70F00964C83 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E750793E14E2E70F00964C83 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E750794314E2E70F00964C83 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E750794414E2E70F00964C83 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		E750794914E2E70F00964C83 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E750794A14E2E70F00964C83 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E750794C14E2E70F00964C83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E750794D14E2E70F00964C83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E750794F14E2E70F00964C83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iStroke/iStroke-Prefix.pch";
+				INFOPLIST_FILE = "iStroke/iStroke-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E750795014E2E70F00964C83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iStroke/iStroke-Prefix.pch";
+				INFOPLIST_FILE = "iStroke/iStroke-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E750792A14E2E70F00964C83 /* Build configuration list for PBXProject "iStroke" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E750794C14E2E70F00964C83 /* Debug */,
+				E750794D14E2E70F00964C83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E750794E14E2E70F00964C83 /* Build configuration list for PBXNativeTarget "iStroke" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E750794F14E2E70F00964C83 /* Debug */,
+				E750795014E2E70F00964C83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E750792714E2E70F00964C83 /* Project object */;
+}
