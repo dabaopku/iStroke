@@ -9,42 +9,41 @@
 #import <Foundation/Foundation.h>
 #import <ApplicationServices/ApplicationServices.h>
 
-typedef enum
-{
-    kLeftButton =0,
+typedef enum {
+	kLeftButton = 0,
 	kRightButton,
 	kMiddleButton,
 } EnumMouseButton;
 
-typedef enum
-{
-    kSleep =0,
+typedef enum {
+	kSleep = 0,
 	kListen,
 	kFindWindow,
 } EnumWorkState;
 
 @interface EventListener : NSObject {
-    CFMachPortRef eventTap;  
-    CFRunLoopSourceRef runLoopSource;
-    CGEventMask eventFilter;
-    
-    CGEventMask maskDown,maskUp,maskDrag,maskMove;
+	CFMachPortRef eventTap;
+	CFRunLoopSourceRef runLoopSource;
+	CGEventMask eventFilter;
 
-    EnumMouseButton mouseButton;
+	CGEventMask maskDown, maskUp, maskDrag, maskMove;
 
-    EnumWorkState state;
+	EnumMouseButton mouseButton;
+
+	EnumWorkState state;
 }
 
--(void) start;
--(void) stop;
+- (void)start;
 
--(CGEventRef) callback:(CGEventTapProxy) proxy
-                      :(CGEventType) type
-                      :(CGEventRef) event
-                      :(void *) refcon;
+- (void)stop;
 
--(void) setMouseButton:(EnumMouseButton) button;
+- (CGEventRef)callback:(CGEventTapProxy)proxy
+		:(CGEventType)type
+		:(CGEventRef)event
+		:(void *)refcon;
 
--(void) chooseWindowMode;
+- (void)setMouseButton:(EnumMouseButton)button;
+
+- (void)chooseWindowMode;
 
 @end

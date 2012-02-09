@@ -12,6 +12,6 @@
 
 }
 
-+ (NSString *) getActiveProcessIdentifier;
++ (NSString *)getActiveProcessIdentifier;
 
 @end

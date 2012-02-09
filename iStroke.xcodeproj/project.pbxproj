@@ -15,6 +15,9 @@
 		E750794814E2E70F00964C83 /* iStrokeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E750794714E2E70F00964C83 /* iStrokeAppDelegate.m */; };
 		E750794B14E2E70F00964C83 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E750794914E2E70F00964C83 /* MainMenu.xib */; };
 		E750796314E2EE3200964C85 /* ProcessHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = E750796314E2EE3200964C84 /* ProcessHooker.m */; };
+		E7727A1714E4541E00935AE7 /* ApplicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7727A1614E4541E00935AE7 /* ApplicationManager.m */; };
+		E7727A1A14E4544A00935AE7 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = E7727A1914E4544A00935AE7 /* Application.m */; };
+		E7727A1D14E4546C00935AE7 /* Stroke.m in Sources */ = {isa = PBXBuildFile; fileRef = E7727A1C14E4546C00935AE7 /* Stroke.m */; };
 		E772DBE414E4424100A06FA8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E750793414E2E70F00964C83 /* Cocoa.framework */; };
 		E772DBEA14E4424100A06FA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E772DBE814E4424100A06FA8 /* InfoPlist.strings */; };
 		E772DBED14E4424100A06FA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E772DBEC14E4424100A06FA8 /* main.m */; };
@@ -41,6 +44,18 @@
 		E750794A14E2E70F00964C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E750796314E2EE3200964C84 /* ProcessHooker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessHooker.m; sourceTree = "<group>"; };
 		E750796314E2EE3200964C86 /* ProcessHooker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessHooker.h; sourceTree = "<group>"; };
+		E7727A0E14E4534E00935AE7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "/Users/dabao/develop/iStroke/test/zh-Hans.lproj/Credits.rtf"; sourceTree = "<absolute>"; };
+		E7727A0F14E4534E00935AE7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/dabao/develop/iStroke/test/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		E7727A1014E4534E00935AE7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "/Users/dabao/develop/iStroke/test/zh-Hans.lproj/MainMenu.xib"; sourceTree = "<absolute>"; };
+		E7727A1214E4534E00935AE7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "/Users/dabao/develop/iStroke/iStroke/zh-Hans.lproj/MainMenu.xib"; sourceTree = "<absolute>"; };
+		E7727A1314E4534E00935AE7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/dabao/develop/iStroke/iStroke/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		E7727A1414E4534E00935AE7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "/Users/dabao/develop/iStroke/iStroke/zh-Hans.lproj/Credits.rtf"; sourceTree = "<absolute>"; };
+		E7727A1514E4541E00935AE7 /* ApplicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationManager.h; sourceTree = "<group>"; };
+		E7727A1614E4541E00935AE7 /* ApplicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationManager.m; sourceTree = "<group>"; };
+		E7727A1814E4544A00935AE7 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		E7727A1914E4544A00935AE7 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		E7727A1B14E4546B00935AE7 /* Stroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stroke.h; sourceTree = "<group>"; };
+		E7727A1C14E4546C00935AE7 /* Stroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stroke.m; sourceTree = "<group>"; };
 		E772DBE214E4424100A06FA8 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E772DBE714E4424100A06FA8 /* test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "test-Info.plist"; sourceTree = "<group>"; };
 		E772DBE914E4424100A06FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -50,6 +65,64 @@
 		E772DBF114E4424100A06FA8 /* testAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testAppDelegate.h; sourceTree = "<group>"; };
 		E772DBF214E4424100A06FA8 /* testAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testAppDelegate.m; sourceTree = "<group>"; };
 		E772DBF514E4424100A06FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E79744AA14E45945004A6A1A /* actiondb.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = actiondb.cc; sourceTree = "<group>"; };
+		E79744AB14E45945004A6A1A /* actiondb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = actiondb.h; sourceTree = "<group>"; };
+		E79744AC14E45945004A6A1A /* actions.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = actions.cc; sourceTree = "<group>"; };
+		E79744AD14E45945004A6A1A /* actions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = actions.h; sourceTree = "<group>"; };
+		E79744AE14E45945004A6A1A /* annotate.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = annotate.cc; sourceTree = "<group>"; };
+		E79744AF14E45945004A6A1A /* annotate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = annotate.h; sourceTree = "<group>"; };
+		E79744B014E45945004A6A1A /* changelog */ = {isa = PBXFileReference; lastKnownFileType = text; path = changelog; sourceTree = "<group>"; };
+		E79744B114E45945004A6A1A /* composite.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = composite.cc; sourceTree = "<group>"; };
+		E79744B214E45945004A6A1A /* composite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = composite.h; sourceTree = "<group>"; };
+		E79744B314E45945004A6A1A /* dbus-server.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "dbus-server.cc"; sourceTree = "<group>"; };
+		E79744B414E45945004A6A1A /* dbus.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = dbus.xml; sourceTree = "<group>"; };
+		E79744B514E45945004A6A1A /* debug.mk.ex */ = {isa = PBXFileReference; lastKnownFileType = text; path = debug.mk.ex; sourceTree = "<group>"; };
+		E79744B614E45945004A6A1A /* easystroke.desktop.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = easystroke.desktop.in; sourceTree = "<group>"; };
+		E79744B714E45945004A6A1A /* easystroke.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = easystroke.svg; sourceTree = "<group>"; };
+		E79744B814E45945004A6A1A /* fire.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fire.cc; sourceTree = "<group>"; };
+		E79744B914E45945004A6A1A /* fire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fire.h; sourceTree = "<group>"; };
+		E79744BA14E45945004A6A1A /* gesture.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gesture.cc; sourceTree = "<group>"; };
+		E79744BB14E45945004A6A1A /* gesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gesture.h; sourceTree = "<group>"; };
+		E79744BC14E45945004A6A1A /* grabber.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = grabber.cc; sourceTree = "<group>"; };
+		E79744BD14E45945004A6A1A /* grabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grabber.h; sourceTree = "<group>"; };
+		E79744BE14E45945004A6A1A /* gui.glade */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = gui.glade; sourceTree = "<group>"; };
+		E79744BF14E45945004A6A1A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E79744C014E45945004A6A1A /* main.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
+		E79744C114E45945004A6A1A /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		E79744C214E45945004A6A1A /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		E79744C414E45945004A6A1A /* prefdb.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = prefdb.cc; sourceTree = "<group>"; };
+		E79744C514E45945004A6A1A /* prefdb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefdb.h; sourceTree = "<group>"; };
+		E79744C614E45945004A6A1A /* prefs.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = prefs.cc; sourceTree = "<group>"; };
+		E79744C714E45945004A6A1A /* prefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefs.h; sourceTree = "<group>"; };
+		E79744C814E45945004A6A1A /* shape.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = shape.cc; sourceTree = "<group>"; };
+		E79744C914E45945004A6A1A /* shape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shape.h; sourceTree = "<group>"; };
+		E79744CA14E45945004A6A1A /* stats.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stats.cc; sourceTree = "<group>"; };
+		E79744CB14E45945004A6A1A /* stroke.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stroke.c; sourceTree = "<group>"; };
+		E79744CC14E45945004A6A1A /* stroke.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stroke.h; sourceTree = "<group>"; };
+		E79744CD14E45945004A6A1A /* trace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = trace.h; sourceTree = "<group>"; };
+		E79744CE14E45945004A6A1A /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		E79744CF14E45945004A6A1A /* var.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = var.h; sourceTree = "<group>"; };
+		E79744D014E45945004A6A1A /* version */ = {isa = PBXFileReference; lastKnownFileType = text; path = version; sourceTree = "<group>"; };
+		E79744D114E45945004A6A1A /* water.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = water.cc; sourceTree = "<group>"; };
+		E79744D214E45945004A6A1A /* water.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = water.h; sourceTree = "<group>"; };
+		E79744D314E45945004A6A1A /* win.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = win.cc; sourceTree = "<group>"; };
+		E79744D414E45945004A6A1A /* win.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = win.h; sourceTree = "<group>"; };
+		E79744D514E45945004A6A1A /* ca.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = ca.po; sourceTree = "<group>"; };
+		E79744D614E45945004A6A1A /* cs.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = cs.po; sourceTree = "<group>"; };
+		E79744D714E45945004A6A1A /* de.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = de.po; sourceTree = "<group>"; };
+		E79744D814E45945004A6A1A /* el.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = el.po; sourceTree = "<group>"; };
+		E79744D914E45945004A6A1A /* es.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = es.po; sourceTree = "<group>"; };
+		E79744DA14E45945004A6A1A /* fi.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = fi.po; sourceTree = "<group>"; };
+		E79744DB14E45945004A6A1A /* fr.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = fr.po; sourceTree = "<group>"; };
+		E79744DC14E45945004A6A1A /* he.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = he.po; sourceTree = "<group>"; };
+		E79744DD14E45945004A6A1A /* it.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = it.po; sourceTree = "<group>"; };
+		E79744DE14E45945004A6A1A /* ja.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = ja.po; sourceTree = "<group>"; };
+		E79744DF14E45945004A6A1A /* ko.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = ko.po; sourceTree = "<group>"; };
+		E79744E014E45945004A6A1A /* pl.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = pl.po; sourceTree = "<group>"; };
+		E79744E114E45945004A6A1A /* ru.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = ru.po; sourceTree = "<group>"; };
+		E79744E214E45945004A6A1A /* vi.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = vi.po; sourceTree = "<group>"; };
+		E79744E314E45945004A6A1A /* zh_CN.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = zh_CN.po; sourceTree = "<group>"; };
+		E79744E414E45945004A6A1A /* zh_TW.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = zh_TW.po; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +148,7 @@
 		E750792514E2E70F00964C83 = {
 			isa = PBXGroup;
 			children = (
+				E79744A914E45945004A6A1A /* easystroke-0.5.5.1 */,
 				E750793A14E2E70F00964C83 /* iStroke */,
 				E772DBE514E4424100A06FA8 /* test */,
 				E750793314E2E70F00964C83 /* Frameworks */,
@@ -113,6 +187,8 @@
 		E750793A14E2E70F00964C83 /* iStroke */ = {
 			isa = PBXGroup;
 			children = (
+				E7727A1814E4544A00935AE7 /* Application.h */,
+				E7727A1914E4544A00935AE7 /* Application.m */,
 				E719195914E2F70C00193FDB /* EventListener.h */,
 				E719195A14E2F70C00193FDB /* EventListener.m */,
 				E750796314E2EE3200964C86 /* ProcessHooker.h */,
@@ -121,6 +197,10 @@
 				E750794714E2E70F00964C83 /* iStrokeAppDelegate.m */,
 				E750794914E2E70F00964C83 /* MainMenu.xib */,
 				E750793B14E2E70F00964C83 /* Supporting Files */,
+				E7727A1514E4541E00935AE7 /* ApplicationManager.h */,
+				E7727A1614E4541E00935AE7 /* ApplicationManager.m */,
+				E7727A1B14E4546B00935AE7 /* Stroke.h */,
+				E7727A1C14E4546C00935AE7 /* Stroke.m */,
 			);
 			path = iStroke;
 			sourceTree = "<group>";
@@ -158,6 +238,80 @@
 				E772DBEE14E4424100A06FA8 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E79744A914E45945004A6A1A /* easystroke-0.5.5.1 */ = {
+			isa = PBXGroup;
+			children = (
+				E79744AA14E45945004A6A1A /* actiondb.cc */,
+				E79744AB14E45945004A6A1A /* actiondb.h */,
+				E79744AC14E45945004A6A1A /* actions.cc */,
+				E79744AD14E45945004A6A1A /* actions.h */,
+				E79744AE14E45945004A6A1A /* annotate.cc */,
+				E79744AF14E45945004A6A1A /* annotate.h */,
+				E79744B014E45945004A6A1A /* changelog */,
+				E79744B114E45945004A6A1A /* composite.cc */,
+				E79744B214E45945004A6A1A /* composite.h */,
+				E79744B314E45945004A6A1A /* dbus-server.cc */,
+				E79744B414E45945004A6A1A /* dbus.xml */,
+				E79744B514E45945004A6A1A /* debug.mk.ex */,
+				E79744B614E45945004A6A1A /* easystroke.desktop.in */,
+				E79744B714E45945004A6A1A /* easystroke.svg */,
+				E79744B814E45945004A6A1A /* fire.cc */,
+				E79744B914E45945004A6A1A /* fire.h */,
+				E79744BA14E45945004A6A1A /* gesture.cc */,
+				E79744BB14E45945004A6A1A /* gesture.h */,
+				E79744BC14E45945004A6A1A /* grabber.cc */,
+				E79744BD14E45945004A6A1A /* grabber.h */,
+				E79744BE14E45945004A6A1A /* gui.glade */,
+				E79744BF14E45945004A6A1A /* LICENSE */,
+				E79744C014E45945004A6A1A /* main.cc */,
+				E79744C114E45945004A6A1A /* main.h */,
+				E79744C214E45945004A6A1A /* Makefile */,
+				E79744C314E45945004A6A1A /* po */,
+				E79744C414E45945004A6A1A /* prefdb.cc */,
+				E79744C514E45945004A6A1A /* prefdb.h */,
+				E79744C614E45945004A6A1A /* prefs.cc */,
+				E79744C714E45945004A6A1A /* prefs.h */,
+				E79744C814E45945004A6A1A /* shape.cc */,
+				E79744C914E45945004A6A1A /* shape.h */,
+				E79744CA14E45945004A6A1A /* stats.cc */,
+				E79744CB14E45945004A6A1A /* stroke.c */,
+				E79744CC14E45945004A6A1A /* stroke.h */,
+				E79744CD14E45945004A6A1A /* trace.h */,
+				E79744CE14E45945004A6A1A /* util.h */,
+				E79744CF14E45945004A6A1A /* var.h */,
+				E79744D014E45945004A6A1A /* version */,
+				E79744D114E45945004A6A1A /* water.cc */,
+				E79744D214E45945004A6A1A /* water.h */,
+				E79744D314E45945004A6A1A /* win.cc */,
+				E79744D414E45945004A6A1A /* win.h */,
+			);
+			name = "easystroke-0.5.5.1";
+			path = "iStroke.xcodeproj/../ref/easystroke-0.5.5.1";
+			sourceTree = "<group>";
+		};
+		E79744C314E45945004A6A1A /* po */ = {
+			isa = PBXGroup;
+			children = (
+				E79744D514E45945004A6A1A /* ca.po */,
+				E79744D614E45945004A6A1A /* cs.po */,
+				E79744D714E45945004A6A1A /* de.po */,
+				E79744D814E45945004A6A1A /* el.po */,
+				E79744D914E45945004A6A1A /* es.po */,
+				E79744DA14E45945004A6A1A /* fi.po */,
+				E79744DB14E45945004A6A1A /* fr.po */,
+				E79744DC14E45945004A6A1A /* he.po */,
+				E79744DD14E45945004A6A1A /* it.po */,
+				E79744DE14E45945004A6A1A /* ja.po */,
+				E79744DF14E45945004A6A1A /* ko.po */,
+				E79744E014E45945004A6A1A /* pl.po */,
+				E79744E114E45945004A6A1A /* ru.po */,
+				E79744E214E45945004A6A1A /* vi.po */,
+				E79744E314E45945004A6A1A /* zh_CN.po */,
+				E79744E414E45945004A6A1A /* zh_TW.po */,
+			);
+			path = po;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +409,9 @@
 				E750794814E2E70F00964C83 /* iStrokeAppDelegate.m in Sources */,
 				E719195B14E2F70C00193FDB /* EventListener.m in Sources */,
 				E750796314E2EE3200964C85 /* ProcessHooker.m in Sources */,
+				E7727A1714E4541E00935AE7 /* ApplicationManager.m in Sources */,
+				E7727A1A14E4544A00935AE7 /* Application.m in Sources */,
+				E7727A1D14E4546C00935AE7 /* Stroke.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +431,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E750793E14E2E70F00964C83 /* en */,
+				E7727A1314E4534E00935AE7 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -282,6 +440,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E750794414E2E70F00964C83 /* en */,
+				E7727A1414E4534E00935AE7 /* zh-Hans */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -290,6 +449,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E750794A14E2E70F00964C83 /* en */,
+				E7727A1214E4534E00935AE7 /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -298,6 +458,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E772DBE914E4424100A06FA8 /* en */,
+				E7727A0F14E4534E00935AE7 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -306,6 +467,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E772DBEF14E4424100A06FA8 /* en */,
+				E7727A0E14E4534E00935AE7 /* zh-Hans */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -314,6 +476,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E772DBF514E4424100A06FA8 /* en */,
+				E7727A1014E4534E00935AE7 /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

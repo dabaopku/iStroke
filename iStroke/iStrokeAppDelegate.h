@@ -11,16 +11,17 @@
 
 @interface iStrokeAppDelegate : NSObject <NSApplicationDelegate> {
 @private
-    NSWindow *window;
-    
-    EventListener * eventListener;
+	NSWindow *window;
+
+	EventListener *eventListener;
 }
 
-@property (assign) IBOutlet NSWindow *window;
+@property(assign) IBOutlet NSWindow *window;
 
--(IBAction) toggleTrack:(NSButton *)sender;
--(IBAction) chooseWindow:(id) sender;
+- (IBAction)toggleTrack:(NSButton *)sender;
 
--(void) doneChooseWindow;
+- (IBAction)chooseWindow:(id)sender;
+
+- (void)doneChooseWindow;
 
 @end
