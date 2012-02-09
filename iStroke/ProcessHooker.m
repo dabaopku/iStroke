@@ -11,11 +11,6 @@
 
 + (NSDictionary *)getActiveProcess
 {
-	for (NSRunningApplication *currApp in [[NSWorkspace sharedWorkspace] runningApplications]) {
-	        if ([currApp isActive]) {
-	            NSLog(@"* %@", [currApp localizedName]);
-	    }
-	}
     NSDictionary * dict=[[NSWorkspace sharedWorkspace] activeApplication];
     return dict;
     /*
@@ -41,7 +36,7 @@
 
 static NSString *iStrokeIdentifier=@"cn.edu.pku.dabao.iStroke";
 
-+ (bool)isStoke {
++ (bool)isStroke {
     NSString *str=[self getActiveProcessIdentifier];
 	bool res=[str isEqualToString:iStrokeIdentifier];
 	return res;

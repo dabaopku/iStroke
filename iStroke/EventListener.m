@@ -61,18 +61,23 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRe
     CGEventTapEnable(eventTap, false);
 }
 
--(CGEventRef) callback:(CGEventTapProxy)proxy :(CGEventType)type :(CGEventRef)event :(void *)refcon
+- (void) findActiveProcess
+{
+	NSString *process=[ProcessHooker getActiveProcessIdentifier];
+	NSLog(@"%@",process);
+	
+	state= kListen;
+	iStrokeAppDelegate *app=[[NSApplication sharedApplication] delegate];
+    [app doneChooseWindow];
+}
+
+- (CGEventRef) callback:(CGEventTapProxy)proxy :(CGEventType)type :(CGEventRef)event :(void *)refcon
 {
     if (state== kFindWindow)
     {
         if(type==kCGEventLeftMouseUp)
         {
-
-	        [[[ProcessHooker alloc] init] performSelector:@selector(getActiveProcess) withObject:nil afterDelay:0.2];
-            state= kListen;
-
-			iStrokeAppDelegate *app=[[NSApplication sharedApplication] delegate];
-	        [app doneChooseWindow];
+	        [self performSelector:@selector(findActiveProcess) withObject:nil afterDelay:0.2];
         }
         return event;
     }
