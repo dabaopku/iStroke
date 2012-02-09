@@ -7,7 +7,7 @@
 //
 
 #import "EventListener.h"
-
+#import "ProcessHooker.h"
 
 @implementation EventListener
 
@@ -25,11 +25,22 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRe
         return sharedObj;
     }
     self = [super init];
+
+    eventFilter=CGEventMaskBit(kCGEventLeftMouseDown)
+        | CGEventMaskBit(kCGEventLeftMouseDragged)
+        | CGEventMaskBit(kCGEventLeftMouseUp)
+        | CGEventMaskBit(kCGEventMouseMoved)
+        | CGEventMaskBit(kCGEventRightMouseDown)
+        | CGEventMaskBit(kCGEventRightMouseDragged)
+        | CGEventMaskBit(kCGEventRightMouseUp)
+        | CGEventMaskBit(kCGEventOtherMouseDown)
+        | CGEventMaskBit(kCGEventOtherMouseDragged)
+        | CGEventMaskBit(kCGEventOtherMouseUp);
     
     if(self){
         eventTap=nil;
         runLoopSource=nil;
-        [self setMouseButton:RightButton];
+        [self setMouseButton:eRightButton];
     }
     
     sharedObj=self;
@@ -39,44 +50,58 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRe
 
 -(void) start
 {
+    state= eListen;
     CGEventTapEnable(eventTap, true);
 }
 
 -(void) stop
 {
+    state= eSleep;
     CGEventTapEnable(eventTap, false);
 }
 
 -(CGEventRef) callback:(CGEventTapProxy)proxy :(CGEventType)type :(CGEventRef)event :(void *)refcon
 {
-    printf("%u\n", (uint32_t)type);
+    if (state==eFindWindow)
+    {
+        if(type==kCGEventLeftMouseUp)
+        {
+            NSString *process=[ProcessHooker getActiveProcessIdentifier];
+            NSLog(@"%@",process);
+            state= eListen;
+        }
+        else if (type==kCGEventLeftMouseDown)
+        {
+        }
+        return event;
+    }
     return event; 
 }
 
--(void) setMouseButton:(MouseButton)button
+-(void) setMouseButton:(EnumMouseButton)button
 {
     mouseButton=button;
+    maskMove=kCGEventMouseMoved;
     switch (mouseButton) {
-        case LeftButton:
-            eventFilter=CGEventMaskBit(kCGEventLeftMouseDown)
-                | CGEventMaskBit(kCGEventLeftMouseDragged)
-                | CGEventMaskBit(kCGEventLeftMouseUp)
-                | CGEventMaskBit(kCGEventMouseMoved);
+        case eLeftButton:
+            maskDown=kCGEventLeftMouseDown;
+            maskDrag=kCGEventLeftMouseDragged;
+            maskUp=kCGEventLeftMouseUp;
             break;
-        case RightButton:
-            eventFilter=CGEventMaskBit(kCGEventRightMouseDown)
-            | CGEventMaskBit(kCGEventRightMouseDragged)
-            | CGEventMaskBit(kCGEventRightMouseUp)
-            | CGEventMaskBit(kCGEventMouseMoved);
+        case eRightButton:
+            maskDown=kCGEventRightMouseDown;
+            maskDrag=kCGEventRightMouseDragged;
+            maskUp=kCGEventRightMouseUp;
             break;
-        case MiddleButton:
-            eventFilter=CGEventMaskBit(kCGEventOtherMouseDown)
-            | CGEventMaskBit(kCGEventOtherMouseDragged)
-            | CGEventMaskBit(kCGEventOtherMouseUp)
-            | CGEventMaskBit(kCGEventMouseMoved);
+        case eMiddleButton:
+            maskDown=kCGEventOtherMouseDown;
+            maskDrag=kCGEventOtherMouseDragged;
+            maskUp=kCGEventOtherMouseUp;
             break;
         default:
-            eventFilter=kCGEventNull;
+            maskDown=kCGEventNull;
+            maskDrag=kCGEventNull;
+            maskUp=kCGEventNull;
             break;
     }
     
@@ -90,4 +115,9 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRe
     runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0);
     CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, kCFRunLoopCommonModes);
 }
+
+- (void)chooseWindowMode {
+    state=eFindWindow;
+}
+
 @end

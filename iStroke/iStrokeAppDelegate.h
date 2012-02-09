@@ -19,5 +19,6 @@
 @property (assign) IBOutlet NSWindow *window;
 
 -(IBAction) toggleTrack:(NSButton *)sender;
+-(IBAction) chooseWindow:(id) sender;
 
 @end

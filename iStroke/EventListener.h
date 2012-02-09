@@ -11,21 +11,30 @@
 
 typedef enum
 {
-    LeftButton=0,
-    RightButton,
-    MiddleButton,
-}  MouseButton;
+    eLeftButton =0,
+    eRightButton,
+    eMiddleButton,
+} EnumMouseButton;
+
+typedef enum
+{
+    eSleep =0,
+    eListen,
+    eFindWindow,
+} EnumWorkState;
 
 @interface EventListener : NSObject {
     CFMachPortRef eventTap;  
     CFRunLoopSourceRef runLoopSource;
     CGEventMask eventFilter;
     
+    CGEventMask maskDown,maskUp,maskDrag,maskMove;
 
-    MouseButton mouseButton;
+    EnumMouseButton mouseButton;
+
+    EnumWorkState state;
 }
 
--(id) init;
 -(void) start;
 -(void) stop;
 
@@ -34,6 +43,8 @@ typedef enum
                       :(CGEventRef) event
                       :(void *) refcon;
 
--(void) setMouseButton:(MouseButton) button;
+-(void) setMouseButton:(EnumMouseButton) button;
+
+-(void) chooseWindowMode;
 
 @end

@@ -14,10 +14,12 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
-    
     eventListener=[[EventListener alloc] init];
     [eventListener start];
+}
+
+- (void)dealloc {
+    [eventListener release];
 }
 
 -(IBAction) toggleTrack:(NSButton *)sender
@@ -33,4 +35,10 @@
             break;
     }
 }
+
+- (IBAction)chooseWindow:(id)sender {
+    [eventListener setMouseButton:eLeftButton];
+    [eventListener chooseWindowMode];
+}
+
 @end

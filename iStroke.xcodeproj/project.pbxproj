@@ -16,6 +16,7 @@
 		E750794B14E2E70F00964C83 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E750794914E2E70F00964C83 /* MainMenu.xib */; };
 		E750795C14E2ED9000964C83 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E750795B14E2ED9000964C83 /* main.cpp */; };
 		E750796314E2EE3200964C83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E750793414E2E70F00964C83 /* Cocoa.framework */; };
+		E750796314E2EE3200964C85 /* ProcessHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = E750796314E2EE3200964C84 /* ProcessHooker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +49,8 @@
 		E750794A14E2E70F00964C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E750795814E2ED8F00964C83 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		E750795B14E2ED9000964C83 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E750796314E2EE3200964C84 /* ProcessHooker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessHooker.m; sourceTree = "<group>"; };
+		E750796314E2EE3200964C86 /* ProcessHooker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessHooker.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 		E750793A14E2E70F00964C83 /* iStroke */ = {
 			isa = PBXGroup;
 			children = (
+				E750796314E2EE3200964C86 /* ProcessHooker.h */,
+				E750796314E2EE3200964C84 /* ProcessHooker.m */,
 				E750794614E2E70F00964C83 /* iStrokeAppDelegate.h */,
 				E750794714E2E70F00964C83 /* iStrokeAppDelegate.m */,
 				E750794914E2E70F00964C83 /* MainMenu.xib */,
@@ -225,6 +230,7 @@
 				E750794214E2E70F00964C83 /* main.m in Sources */,
 				E750794814E2E70F00964C83 /* iStrokeAppDelegate.m in Sources */,
 				E719195B14E2F70C00193FDB /* EventListener.m in Sources */,
+				E750796314E2EE3200964C85 /* ProcessHooker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
