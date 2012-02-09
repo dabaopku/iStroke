@@ -21,4 +21,6 @@
 -(IBAction) toggleTrack:(NSButton *)sender;
 -(IBAction) chooseWindow:(id) sender;
 
+-(void) doneChooseWindow;
+
 @end

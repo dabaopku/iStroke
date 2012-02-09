@@ -12,8 +12,6 @@
 
 }
 
-+(NSDictionary *) getActiveProcess;
-+(NSString *) getActiveProcessIdentifier;
-+(bool) isSelfProcess;
++ (NSString *) getActiveProcessIdentifier;
 
 @end

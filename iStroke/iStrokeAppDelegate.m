@@ -14,11 +14,13 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [window setLevel:NSDockWindowLevel];
     eventListener=[[EventListener alloc] init];
     [eventListener start];
 }
 
-- (void)dealloc {
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
     [eventListener release];
 }
 
@@ -37,8 +39,19 @@
 }
 
 - (IBAction)chooseWindow:(id)sender {
-    [eventListener setMouseButton:eLeftButton];
+	window.isVisible= NO;
+	[[NSApplication sharedApplication] deactivate];
+    NSCursor *cursor=[NSCursor crosshairCursor];
+    [cursor set];
     [eventListener chooseWindowMode];
 }
+
+- (void)doneChooseWindow {
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:NO];
+	window.isVisible=YES;
+	NSCursor *cursor=[NSCursor arrowCursor];
+	[cursor set];
+}
+
 
 @end

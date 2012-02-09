@@ -9,9 +9,13 @@
 
 @implementation ProcessHooker
 
-
 + (NSDictionary *)getActiveProcess
 {
+	for (NSRunningApplication *currApp in [[NSWorkspace sharedWorkspace] runningApplications]) {
+	        if ([currApp isActive]) {
+	            NSLog(@"* %@", [currApp localizedName]);
+	    }
+	}
     NSDictionary * dict=[[NSWorkspace sharedWorkspace] activeApplication];
     return dict;
     /*
@@ -29,16 +33,18 @@
     */
 }
 
-+ (NSString *)getActiveProcessIdentifier {
++ (NSString *) getActiveProcessIdentifier
+{
     NSDictionary *dict=[self getActiveProcess];
     return [dict objectForKey:@"NSApplicationBundleIdentifier"];
 }
 
 static NSString *iStrokeIdentifier=@"cn.edu.pku.dabao.iStroke";
 
-+ (bool)isSelfProcess {
++ (bool)isStoke {
     NSString *str=[self getActiveProcessIdentifier];
-    return [str isEqualToString:iStrokeIdentifier];
+	bool res=[str isEqualToString:iStrokeIdentifier];
+	return res;
 }
 
 

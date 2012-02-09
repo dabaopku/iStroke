@@ -8,6 +8,7 @@
 
 #import "EventListener.h"
 #import "ProcessHooker.h"
+#import "iStrokeAppDelegate.h"
 
 @implementation EventListener
 
@@ -40,7 +41,7 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRe
     if(self){
         eventTap=nil;
         runLoopSource=nil;
-        [self setMouseButton:eRightButton];
+        [self setMouseButton:kRightButton];
     }
     
     sharedObj=self;
@@ -50,28 +51,28 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRe
 
 -(void) start
 {
-    state= eListen;
+    state= kListen;
     CGEventTapEnable(eventTap, true);
 }
 
 -(void) stop
 {
-    state= eSleep;
+    state= kSleep;
     CGEventTapEnable(eventTap, false);
 }
 
 -(CGEventRef) callback:(CGEventTapProxy)proxy :(CGEventType)type :(CGEventRef)event :(void *)refcon
 {
-    if (state==eFindWindow)
+    if (state== kFindWindow)
     {
         if(type==kCGEventLeftMouseUp)
         {
-            NSString *process=[ProcessHooker getActiveProcessIdentifier];
-            NSLog(@"%@",process);
-            state= eListen;
-        }
-        else if (type==kCGEventLeftMouseDown)
-        {
+
+	        [[[ProcessHooker alloc] init] performSelector:@selector(getActiveProcess) withObject:nil afterDelay:0.2];
+            state= kListen;
+
+			iStrokeAppDelegate *app=[[NSApplication sharedApplication] delegate];
+	        [app doneChooseWindow];
         }
         return event;
     }
@@ -83,17 +84,17 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRe
     mouseButton=button;
     maskMove=kCGEventMouseMoved;
     switch (mouseButton) {
-        case eLeftButton:
+        case kLeftButton:
             maskDown=kCGEventLeftMouseDown;
             maskDrag=kCGEventLeftMouseDragged;
             maskUp=kCGEventLeftMouseUp;
             break;
-        case eRightButton:
+        case kRightButton:
             maskDown=kCGEventRightMouseDown;
             maskDrag=kCGEventRightMouseDragged;
             maskUp=kCGEventRightMouseUp;
             break;
-        case eMiddleButton:
+        case kMiddleButton:
             maskDown=kCGEventOtherMouseDown;
             maskDrag=kCGEventOtherMouseDragged;
             maskUp=kCGEventOtherMouseUp;
@@ -117,7 +118,8 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type,  CGEventRe
 }
 
 - (void)chooseWindowMode {
-    state=eFindWindow;
+    [self setMouseButton:kLeftButton];
+    state= kFindWindow;
 }
 
 @end

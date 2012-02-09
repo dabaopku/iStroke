@@ -11,16 +11,16 @@
 
 typedef enum
 {
-    eLeftButton =0,
-    eRightButton,
-    eMiddleButton,
+    kLeftButton =0,
+	kRightButton,
+	kMiddleButton,
 } EnumMouseButton;
 
 typedef enum
 {
-    eSleep =0,
-    eListen,
-    eFindWindow,
+    kSleep =0,
+	kListen,
+	kFindWindow,
 } EnumWorkState;
 
 @interface EventListener : NSObject {
