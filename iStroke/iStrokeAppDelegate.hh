@@ -8,20 +8,26 @@
 
 #import <Cocoa/Cocoa.h>
 #import "EventListener.h"
+#import "Stroke.hh"
 
 @interface iStrokeAppDelegate : NSObject <NSApplicationDelegate> {
 @private
 	NSWindow *window;
 
 	EventListener *eventListener;
+    
+    iStroke::Stroke *curStroke, *preStroke;
 }
 
 @property(assign) IBOutlet NSWindow *window;
 
 - (IBAction)toggleTrack:(NSButton *)sender;
-
 - (IBAction)chooseWindow:(id)sender;
-
 - (void)doneChooseWindow;
+
+- (IBAction)test:(id)sender;
+
+-(void)addPoint:(double)x :(double)y;
+-(void)doneStroke;
 
 @end

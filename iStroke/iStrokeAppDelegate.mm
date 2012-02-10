@@ -6,7 +6,9 @@
 //  Copyright 2012年 PKU. All rights reserved.
 //
 
-#import "iStrokeAppDelegate.h"
+#import "iStrokeAppDelegate.hh"
+
+using namespace iStroke;
 
 @implementation iStrokeAppDelegate
 
@@ -14,12 +16,19 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	[window setLevel:NSDockWindowLevel];
+    
+    curStroke=new Stroke();
+    preStroke=new Stroke();
+    
 	eventListener = [[EventListener alloc] init];
 	[eventListener start];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
 	[eventListener release];
+    
+    delete curStroke;
+    delete preStroke;
 }
 
 - (IBAction)toggleTrack:(NSButton *)sender {
@@ -50,5 +59,28 @@
 	[cursor set];
 }
 
+-(IBAction)test:(id)sender
+{
+    
+}
 
+-(void)addPoint:(double)x :(double)y
+{
+    curStroke->addPoint(x,y);
+}
+-(void)doneStroke
+{
+    NSLog(@"Comparing two stroke");
+    if (preStroke->size()==0) {
+        NSLog(@"no previou stroke");
+    }
+    else
+    {
+        double res=curStroke->compare(*preStroke);
+        NSLog(@"Distance: %f",res);
+    }
+    delete preStroke;
+    preStroke=curStroke;
+    curStroke=new Stroke();
+}
 @end

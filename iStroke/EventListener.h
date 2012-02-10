@@ -31,6 +31,8 @@ typedef enum {
 	EnumMouseButton mouseButton;
 
 	EnumWorkState state;
+    
+    int trackNum;
 }
 
 - (void)start;

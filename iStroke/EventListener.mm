@@ -1,5 +1,5 @@
 //
-//  EventListener.m
+//  EventListener.mm
 //  iStroke
 //
 //  Created by dabao on 12-2-9.
@@ -8,7 +8,7 @@
 
 #import "EventListener.h"
 #import "ProcessHooker.h"
-#import "iStrokeAppDelegate.h"
+#import "iStrokeAppDelegate.hh"
 
 @implementation EventListener
 
@@ -66,6 +66,24 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
 		}
 		return event;
 	}
+    if (state==kListen) {
+        if (type==maskDown) {
+            trackNum=0;
+        }
+        if (type==maskUp) {
+            if (trackNum>5) {
+                iStrokeAppDelegate *app = [[NSApplication sharedApplication] delegate];
+                [app doneStroke];
+            }
+            trackNum=0;
+        }
+        if (type==maskDrag) {
+            trackNum++;
+            iStrokeAppDelegate *app = [[NSApplication sharedApplication] delegate];
+            CGPoint pos=CGEventGetLocation(event);
+            [app addPoint:pos.x :pos.y];
+        }
+    }
 	return event;
 }
 
