@@ -83,6 +83,9 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
             CGPoint pos=CGEventGetLocation(event);
             [app addPoint:pos.x :pos.y];
         }
+        CGEventSetType(event, kCGEventNull);
+        return event;
+       
     }
 	return event;
 }

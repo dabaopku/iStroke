@@ -16,7 +16,8 @@
 
 	EventListener *eventListener;
     
-    iStroke::Stroke *curStroke, *preStroke;
+    iStroke::Stroke *curStroke, *preStroke;    
+    IBOutlet NSWindow *drawStrokeWindow;
 }
 
 @property(assign) IBOutlet NSWindow *window;

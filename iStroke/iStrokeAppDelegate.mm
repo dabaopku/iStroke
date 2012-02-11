@@ -15,7 +15,15 @@ using namespace iStroke;
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	[window setLevel:NSDockWindowLevel];
+	//[window setLevel:NSDockWindowLevel];
+    
+    [drawStrokeWindow setLevel:NSDockWindowLevel];
+    [drawStrokeWindow setAlphaValue:0.4];
+    drawStrokeWindow.isVisible=NO;
+    [drawStrokeWindow setStyleMask:NSBorderlessWindowMask];
+    [drawStrokeWindow setFrame:[[NSScreen mainScreen] frame] display:YES];
+    
+    [window makeKeyAndOrderFront:self];
     
     curStroke=new Stroke();
     preStroke=new Stroke();
@@ -61,15 +69,20 @@ using namespace iStroke;
 
 -(IBAction)test:(id)sender
 {
-    
+    [drawStrokeWindow makeKeyAndOrderFront:self];
 }
 
 -(void)addPoint:(double)x :(double)y
 {
     curStroke->addPoint(x,y);
+    if (!drawStrokeWindow.isVisible) {
+        drawStrokeWindow.isVisible=YES;
+    }
 }
 -(void)doneStroke
 {
+    drawStrokeWindow.isVisible=NO;
+    
     NSLog(@"Comparing two stroke");
     if (preStroke->size()==0) {
         NSLog(@"no previou stroke");

@@ -25,6 +25,7 @@
 		E772DBF314E4424100A06FA8 /* testAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E772DBF214E4424100A06FA8 /* testAppDelegate.m */; };
 		E772DBF614E4424100A06FA8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E772DBF414E4424100A06FA8 /* MainMenu.xib */; };
 		E772DBF914E4424100A06FE6 /* Gesture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E772DBF914E4424100A06FE5 /* Gesture.mm */; };
+		E78E667814E6CBC700C7BDC3 /* DrawStrokeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E78E667714E6CBC700C7BDC3 /* DrawStrokeWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,66 +67,9 @@
 		E772DBF114E4424100A06FA8 /* testAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testAppDelegate.h; sourceTree = "<group>"; };
 		E772DBF214E4424100A06FA8 /* testAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testAppDelegate.m; sourceTree = "<group>"; };
 		E772DBF514E4424100A06FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FAA /* actiondb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = actiondb.cc; path = "ref/easystroke-0.5.5.1/actiondb.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FAB /* actiondb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = actiondb.h; path = "ref/easystroke-0.5.5.1/actiondb.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FAC /* actions.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = actions.cc; path = "ref/easystroke-0.5.5.1/actions.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FAD /* actions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = actions.h; path = "ref/easystroke-0.5.5.1/actions.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FAE /* annotate.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = annotate.cc; path = "ref/easystroke-0.5.5.1/annotate.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FAF /* annotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = annotate.h; path = "ref/easystroke-0.5.5.1/annotate.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FB0 /* changelog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = changelog; path = "ref/easystroke-0.5.5.1/changelog"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FB1 /* composite.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = composite.cc; path = "ref/easystroke-0.5.5.1/composite.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FB2 /* composite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = composite.h; path = "ref/easystroke-0.5.5.1/composite.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FB3 /* dbus-server.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "dbus-server.cc"; path = "ref/easystroke-0.5.5.1/dbus-server.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FB4 /* dbus.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = dbus.xml; path = "ref/easystroke-0.5.5.1/dbus.xml"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FB5 /* debug.mk.ex */ = {isa = PBXFileReference; lastKnownFileType = text; name = debug.mk.ex; path = "ref/easystroke-0.5.5.1/debug.mk.ex"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FB6 /* easystroke.desktop.in */ = {isa = PBXFileReference; lastKnownFileType = text; name = easystroke.desktop.in; path = "ref/easystroke-0.5.5.1/easystroke.desktop.in"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FB7 /* easystroke.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = easystroke.svg; path = "ref/easystroke-0.5.5.1/easystroke.svg"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FB8 /* fire.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fire.cc; path = "ref/easystroke-0.5.5.1/fire.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FB9 /* fire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fire.h; path = "ref/easystroke-0.5.5.1/fire.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FBA /* gesture.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gesture.cc; path = "ref/easystroke-0.5.5.1/gesture.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FBB /* gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gesture.h; path = "ref/easystroke-0.5.5.1/gesture.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FBC /* grabber.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = grabber.cc; path = "ref/easystroke-0.5.5.1/grabber.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FBD /* grabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = grabber.h; path = "ref/easystroke-0.5.5.1/grabber.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FBE /* gui.glade */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = gui.glade; path = "ref/easystroke-0.5.5.1/gui.glade"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FBF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = "ref/easystroke-0.5.5.1/LICENSE"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FC0 /* main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cc; path = "ref/easystroke-0.5.5.1/main.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FC1 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = main.h; path = "ref/easystroke-0.5.5.1/main.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FC2 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = "ref/easystroke-0.5.5.1/Makefile"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FC4 /* ca.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = ca.po; path = "ref/easystroke-0.5.5.1/po/ca.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FC5 /* cs.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = cs.po; path = "ref/easystroke-0.5.5.1/po/cs.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FC6 /* de.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = de.po; path = "ref/easystroke-0.5.5.1/po/de.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FC7 /* el.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = el.po; path = "ref/easystroke-0.5.5.1/po/el.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FC8 /* es.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = es.po; path = "ref/easystroke-0.5.5.1/po/es.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FC9 /* fi.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = fi.po; path = "ref/easystroke-0.5.5.1/po/fi.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FCA /* fr.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = fr.po; path = "ref/easystroke-0.5.5.1/po/fr.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FCB /* he.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = he.po; path = "ref/easystroke-0.5.5.1/po/he.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FCC /* it.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = it.po; path = "ref/easystroke-0.5.5.1/po/it.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FCD /* ja.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = ja.po; path = "ref/easystroke-0.5.5.1/po/ja.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FCE /* ko.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = ko.po; path = "ref/easystroke-0.5.5.1/po/ko.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FCF /* pl.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = pl.po; path = "ref/easystroke-0.5.5.1/po/pl.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FD0 /* ru.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = ru.po; path = "ref/easystroke-0.5.5.1/po/ru.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FD1 /* vi.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = vi.po; path = "ref/easystroke-0.5.5.1/po/vi.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FD2 /* zh_CN.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = zh_CN.po; path = "ref/easystroke-0.5.5.1/po/zh_CN.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FD3 /* zh_TW.po */ = {isa = PBXFileReference; lastKnownFileType = text; name = zh_TW.po; path = "ref/easystroke-0.5.5.1/po/zh_TW.po"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FD4 /* prefdb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = prefdb.cc; path = "ref/easystroke-0.5.5.1/prefdb.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FD5 /* prefdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = prefdb.h; path = "ref/easystroke-0.5.5.1/prefdb.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FD6 /* prefs.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = prefs.cc; path = "ref/easystroke-0.5.5.1/prefs.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FD7 /* prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = prefs.h; path = "ref/easystroke-0.5.5.1/prefs.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FD8 /* shape.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shape.cc; path = "ref/easystroke-0.5.5.1/shape.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FD9 /* shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shape.h; path = "ref/easystroke-0.5.5.1/shape.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FDA /* stats.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stats.cc; path = "ref/easystroke-0.5.5.1/stats.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FDB /* stroke.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stroke.c; path = "ref/easystroke-0.5.5.1/stroke.c"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FDC /* stroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stroke.h; path = "ref/easystroke-0.5.5.1/stroke.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FDD /* trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = trace.h; path = "ref/easystroke-0.5.5.1/trace.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FDE /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = "ref/easystroke-0.5.5.1/util.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FDF /* var.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = var.h; path = "ref/easystroke-0.5.5.1/var.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FE0 /* version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = version; path = "ref/easystroke-0.5.5.1/version"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FE1 /* water.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = water.cc; path = "ref/easystroke-0.5.5.1/water.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FE2 /* water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = water.h; path = "ref/easystroke-0.5.5.1/water.h"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FE3 /* win.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = win.cc; path = "ref/easystroke-0.5.5.1/win.cc"; sourceTree = "<group>"; };
-		E772DBF914E4424100A06FE4 /* win.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = win.h; path = "ref/easystroke-0.5.5.1/win.h"; sourceTree = "<group>"; };
 		E772DBF914E4424100A06FE5 /* Gesture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Gesture.mm; sourceTree = "<group>"; };
 		E772DBF914E4424100A06FE7 /* Gesture.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Gesture.hh; sourceTree = "<group>"; };
+		E78E667714E6CBC700C7BDC3 /* DrawStrokeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawStrokeWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,11 +95,11 @@
 		E750792514E2E70F00964C83 = {
 			isa = PBXGroup;
 			children = (
+				E78E667714E6CBC700C7BDC3 /* DrawStrokeWindow.xib */,
 				E750793A14E2E70F00964C83 /* iStroke */,
 				E772DBE514E4424100A06FA8 /* test */,
 				E750793314E2E70F00964C83 /* Frameworks */,
 				E750793114E2E70F00964C83 /* Products */,
-				E772DBF914E4424100A06FA9 /* easystroke-0.5.5.1 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,79 +189,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E772DBF914E4424100A06FA9 /* easystroke-0.5.5.1 */ = {
-			isa = PBXGroup;
-			children = (
-				E772DBF914E4424100A06FE4 /* win.h */,
-				E772DBF914E4424100A06FE3 /* win.cc */,
-				E772DBF914E4424100A06FE2 /* water.h */,
-				E772DBF914E4424100A06FE1 /* water.cc */,
-				E772DBF914E4424100A06FE0 /* version */,
-				E772DBF914E4424100A06FDF /* var.h */,
-				E772DBF914E4424100A06FDE /* util.h */,
-				E772DBF914E4424100A06FDD /* trace.h */,
-				E772DBF914E4424100A06FDC /* stroke.h */,
-				E772DBF914E4424100A06FDB /* stroke.c */,
-				E772DBF914E4424100A06FDA /* stats.cc */,
-				E772DBF914E4424100A06FD9 /* shape.h */,
-				E772DBF914E4424100A06FD8 /* shape.cc */,
-				E772DBF914E4424100A06FD7 /* prefs.h */,
-				E772DBF914E4424100A06FD6 /* prefs.cc */,
-				E772DBF914E4424100A06FD5 /* prefdb.h */,
-				E772DBF914E4424100A06FD4 /* prefdb.cc */,
-				E772DBF914E4424100A06FC2 /* Makefile */,
-				E772DBF914E4424100A06FC1 /* main.h */,
-				E772DBF914E4424100A06FC0 /* main.cc */,
-				E772DBF914E4424100A06FBF /* LICENSE */,
-				E772DBF914E4424100A06FBE /* gui.glade */,
-				E772DBF914E4424100A06FBD /* grabber.h */,
-				E772DBF914E4424100A06FBC /* grabber.cc */,
-				E772DBF914E4424100A06FBB /* gesture.h */,
-				E772DBF914E4424100A06FBA /* gesture.cc */,
-				E772DBF914E4424100A06FB9 /* fire.h */,
-				E772DBF914E4424100A06FB8 /* fire.cc */,
-				E772DBF914E4424100A06FB7 /* easystroke.svg */,
-				E772DBF914E4424100A06FB6 /* easystroke.desktop.in */,
-				E772DBF914E4424100A06FB5 /* debug.mk.ex */,
-				E772DBF914E4424100A06FB4 /* dbus.xml */,
-				E772DBF914E4424100A06FB3 /* dbus-server.cc */,
-				E772DBF914E4424100A06FB2 /* composite.h */,
-				E772DBF914E4424100A06FB1 /* composite.cc */,
-				E772DBF914E4424100A06FB0 /* changelog */,
-				E772DBF914E4424100A06FAF /* annotate.h */,
-				E772DBF914E4424100A06FAE /* annotate.cc */,
-				E772DBF914E4424100A06FAD /* actions.h */,
-				E772DBF914E4424100A06FAC /* actions.cc */,
-				E772DBF914E4424100A06FAB /* actiondb.h */,
-				E772DBF914E4424100A06FAA /* actiondb.cc */,
-				E772DBF914E4424100A06FC3 /* po */,
-			);
-			name = "easystroke-0.5.5.1";
-			sourceTree = "<group>";
-		};
-		E772DBF914E4424100A06FC3 /* po */ = {
-			isa = PBXGroup;
-			children = (
-				E772DBF914E4424100A06FD3 /* zh_TW.po */,
-				E772DBF914E4424100A06FD2 /* zh_CN.po */,
-				E772DBF914E4424100A06FD1 /* vi.po */,
-				E772DBF914E4424100A06FD0 /* ru.po */,
-				E772DBF914E4424100A06FCF /* pl.po */,
-				E772DBF914E4424100A06FCE /* ko.po */,
-				E772DBF914E4424100A06FCD /* ja.po */,
-				E772DBF914E4424100A06FCC /* it.po */,
-				E772DBF914E4424100A06FCB /* he.po */,
-				E772DBF914E4424100A06FCA /* fr.po */,
-				E772DBF914E4424100A06FC9 /* fi.po */,
-				E772DBF914E4424100A06FC8 /* es.po */,
-				E772DBF914E4424100A06FC7 /* el.po */,
-				E772DBF914E4424100A06FC6 /* de.po */,
-				E772DBF914E4424100A06FC5 /* cs.po */,
-				E772DBF914E4424100A06FC4 /* ca.po */,
-			);
-			name = po;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,6 +240,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = E750792514E2E70F00964C83;
 			productRefGroup = E750793114E2E70F00964C83 /* Products */;
@@ -389,6 +261,7 @@
 				E750793F14E2E70F00964C83 /* InfoPlist.strings in Resources */,
 				E750794514E2E70F00964C83 /* Credits.rtf in Resources */,
 				E750794B14E2E70F00964C83 /* MainMenu.xib in Resources */,
+				E78E667814E6CBC700C7BDC3 /* DrawStrokeWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
