@@ -32,7 +32,8 @@ namespace iStroke
 
     void Stroke::addPoint(double x, double y)
     {
-        assert(capacity>n);
+        if(capacity<=n)
+            return;
         p[n].x=x;
         p[n].y=y;
         n++;        

@@ -69,6 +69,7 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
     if (state==kListen) {
         if (type==maskDown) {
             trackNum=0;
+            CGEventSetType(event, kCGEventNull);
         }
         if (type==maskUp) {
             if (trackNum>5) {
@@ -82,10 +83,7 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
             iStrokeAppDelegate *app = [[NSApplication sharedApplication] delegate];
             CGPoint pos=CGEventGetLocation(event);
             [app addPoint:pos.x :pos.y];
-        }
-        CGEventSetType(event, kCGEventNull);
-        return event;
-       
+        }       
     }
 	return event;
 }

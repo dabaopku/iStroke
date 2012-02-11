@@ -15,12 +15,12 @@ using namespace iStroke;
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	//[window setLevel:NSDockWindowLevel];
     
-    [drawStrokeWindow setLevel:NSDockWindowLevel];
-    [drawStrokeWindow setAlphaValue:0.4];
-    drawStrokeWindow.isVisible=NO;
+    [drawStrokeWindow setLevel:NSFloatingWindowLevel];
+    [drawStrokeWindow setOpaque:NO];
+    [drawStrokeWindow setBackgroundColor:[NSColor clearColor]];
     [drawStrokeWindow setStyleMask:NSBorderlessWindowMask];
+    drawStrokeWindow.isVisible=NO;
     [drawStrokeWindow setFrame:[[NSScreen mainScreen] frame] display:YES];
     
     [window makeKeyAndOrderFront:self];
@@ -75,22 +75,25 @@ using namespace iStroke;
 -(void)addPoint:(double)x :(double)y
 {
     curStroke->addPoint(x,y);
+    [drawStrokeView addPoint:x :y];
     if (!drawStrokeWindow.isVisible) {
         drawStrokeWindow.isVisible=YES;
     }
+    [drawStrokeView setNeedsDisplay:YES];
 }
 -(void)doneStroke
 {
+    [drawStrokeView clear];
     drawStrokeWindow.isVisible=NO;
     
-    NSLog(@"Comparing two stroke");
+    // NSLog(@"Comparing two stroke");
     if (preStroke->size()==0) {
-        NSLog(@"no previou stroke");
+        //   NSLog(@"no previou stroke");
     }
     else
     {
-        double res=curStroke->compare(*preStroke);
-        NSLog(@"Distance: %f",res);
+        //double res=curStroke->compare(*preStroke);
+        //   NSLog(@"Distance: %f",res);
     }
     delete preStroke;
     preStroke=curStroke;

@@ -25,7 +25,7 @@
 		E772DBF314E4424100A06FA8 /* testAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E772DBF214E4424100A06FA8 /* testAppDelegate.m */; };
 		E772DBF614E4424100A06FA8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E772DBF414E4424100A06FA8 /* MainMenu.xib */; };
 		E772DBF914E4424100A06FE6 /* Gesture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E772DBF914E4424100A06FE5 /* Gesture.mm */; };
-		E78E667814E6CBC700C7BDC3 /* DrawStrokeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E78E667714E6CBC700C7BDC3 /* DrawStrokeWindow.xib */; };
+		E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,8 @@
 		E772DBF514E4424100A06FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E772DBF914E4424100A06FE5 /* Gesture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Gesture.mm; sourceTree = "<group>"; };
 		E772DBF914E4424100A06FE7 /* Gesture.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Gesture.hh; sourceTree = "<group>"; };
-		E78E667714E6CBC700C7BDC3 /* DrawStrokeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawStrokeWindow.xib; sourceTree = "<group>"; };
+		E7C4ED6D14E6DF6D006444E0 /* DrawStrokeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawStrokeView.h; sourceTree = "<group>"; };
+		E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawStrokeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +96,6 @@
 		E750792514E2E70F00964C83 = {
 			isa = PBXGroup;
 			children = (
-				E78E667714E6CBC700C7BDC3 /* DrawStrokeWindow.xib */,
 				E750793A14E2E70F00964C83 /* iStroke */,
 				E772DBE514E4424100A06FA8 /* test */,
 				E750793314E2E70F00964C83 /* Frameworks */,
@@ -134,22 +134,10 @@
 		E750793A14E2E70F00964C83 /* iStroke */ = {
 			isa = PBXGroup;
 			children = (
-				E772DBF914E4424100A06FE5 /* Gesture.mm */,
-				E772DBF914E4424100A06FE7 /* Gesture.hh */,
-				E7727A1814E4544A00935AE7 /* Application.h */,
-				E7727A1914E4544A00935AE7 /* Application.m */,
-				E719195914E2F70C00193FDB /* EventListener.h */,
-				E719195A14E2F70C00193FDB /* EventListener.mm */,
-				E750796314E2EE3200964C86 /* ProcessHooker.h */,
-				E750796314E2EE3200964C84 /* ProcessHooker.m */,
-				E750794614E2E70F00964C83 /* iStrokeAppDelegate.hh */,
-				E750794714E2E70F00964C83 /* iStrokeAppDelegate.mm */,
-				E750794914E2E70F00964C83 /* MainMenu.xib */,
+				E7C4ED7014E6DFF5006444E0 /* Interface */,
+				E7C4ED7114E6E00D006444E0 /* Gesture */,
+				E7C4ED7214E6E021006444E0 /* Event */,
 				E750793B14E2E70F00964C83 /* Supporting Files */,
-				E7727A1514E4541E00935AE7 /* ApplicationManager.h */,
-				E7727A1614E4541E00935AE7 /* ApplicationManager.m */,
-				E7727A1B14E4546B00935AE7 /* Stroke.hh */,
-				E7727A1C14E4546C00935AE7 /* Stroke.mm */,
 			);
 			path = iStroke;
 			sourceTree = "<group>";
@@ -187,6 +175,44 @@
 				E772DBEE14E4424100A06FA8 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7C4ED7014E6DFF5006444E0 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				E7C4ED6D14E6DF6D006444E0 /* DrawStrokeView.h */,
+				E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.m */,
+				E750794614E2E70F00964C83 /* iStrokeAppDelegate.hh */,
+				E750794714E2E70F00964C83 /* iStrokeAppDelegate.mm */,
+				E750794914E2E70F00964C83 /* MainMenu.xib */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		E7C4ED7114E6E00D006444E0 /* Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				E772DBF914E4424100A06FE5 /* Gesture.mm */,
+				E772DBF914E4424100A06FE7 /* Gesture.hh */,
+				E7727A1B14E4546B00935AE7 /* Stroke.hh */,
+				E7727A1C14E4546C00935AE7 /* Stroke.mm */,
+			);
+			name = Gesture;
+			sourceTree = "<group>";
+		};
+		E7C4ED7214E6E021006444E0 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				E7727A1514E4541E00935AE7 /* ApplicationManager.h */,
+				E7727A1614E4541E00935AE7 /* ApplicationManager.m */,
+				E7727A1814E4544A00935AE7 /* Application.h */,
+				E7727A1914E4544A00935AE7 /* Application.m */,
+				E719195914E2F70C00193FDB /* EventListener.h */,
+				E719195A14E2F70C00193FDB /* EventListener.mm */,
+				E750796314E2EE3200964C86 /* ProcessHooker.h */,
+				E750796314E2EE3200964C84 /* ProcessHooker.m */,
+			);
+			name = Event;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +287,6 @@
 				E750793F14E2E70F00964C83 /* InfoPlist.strings in Resources */,
 				E750794514E2E70F00964C83 /* Credits.rtf in Resources */,
 				E750794B14E2E70F00964C83 /* MainMenu.xib in Resources */,
-				E78E667814E6CBC700C7BDC3 /* DrawStrokeWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +315,7 @@
 				E7727A1A14E4544A00935AE7 /* Application.m in Sources */,
 				E7727A1D14E4546C00935AE7 /* Stroke.mm in Sources */,
 				E772DBF914E4424100A06FE6 /* Gesture.mm in Sources */,
+				E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

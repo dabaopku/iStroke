@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "EventListener.h"
 #import "Stroke.hh"
+#import "DrawStrokeView.h"
 
 @interface iStrokeAppDelegate : NSObject <NSApplicationDelegate> {
 @private
@@ -18,6 +19,7 @@
     
     iStroke::Stroke *curStroke, *preStroke;    
     IBOutlet NSWindow *drawStrokeWindow;
+    IBOutlet DrawStrokeView *drawStrokeView;
 }
 
 @property(assign) IBOutlet NSWindow *window;
