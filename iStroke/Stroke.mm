@@ -53,7 +53,6 @@ namespace iStroke
     void Stroke::finish()
     {
         assert(capacity>0);
-        capacity=-1;
         
         double total=0;
         p[0].t=0;
@@ -127,12 +126,10 @@ namespace iStroke
      * approximation) of the integral over square of the angle difference among
      * (roughly) all reparametrizations whose slope is always between 1/2 and 2.
      */
-    double Stroke::compare(iStroke::Stroke &s,int *path_x, int *path_y)
+    double Stroke::compare(const Stroke &s,int *path_x, int *path_y) const
     {
-        if(!isReady)
-            finish();
-        if(!s.isReady)
-            s.finish();
+        assert(isReady);
+        assert(s.isReady);
         
         double **dist;
         int **prev_x;
@@ -260,5 +257,24 @@ namespace iStroke
         delete []prev_y;
         
         return cost;
+    }
+    
+    ostream & operator<<(ostream & os,const Stroke & obj)
+    {
+        os<<obj.capacity<<" "<<obj.n<<" ";
+        for (int i=0; i<obj.n;++i) {
+            os<<obj.p[i].x<<" "<<obj.p[i].y<<" ";
+        }
+        return os;
+    }
+    
+    istream & operator>>(istream & is,Stroke & obj)
+    {
+        is>>obj.capacity>>obj.n;
+        for (int i=0; i<obj.n;++i) {
+            is>>obj.p[i].x>>obj.p[i].y;
+        }
+        obj.finish();
+        return is;
     }
 }

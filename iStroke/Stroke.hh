@@ -5,6 +5,7 @@
 //  Created by dabao on 12-2-10.
 //  Copyright 2012年 PKU. All rights reserved.
 //
+#include <iostream>
 
 namespace iStroke {
 	class Stroke {
@@ -20,7 +21,7 @@ namespace iStroke {
 		double time(int index) const;
 		double angle(int index) const;
 		double angleDiff(const Stroke & s, int i, int j) const;
-		double compare(Stroke & s,int *path_x=0, int *path_y=0);
+		double compare(const Stroke & s,int *path_x=0, int *path_y=0) const;
 
 		const static double infinity;
 		const static double eps;
@@ -37,6 +38,10 @@ namespace iStroke {
 			double alpha;
 		};
 		Point *p;
-	};
+        
+    public:
+        friend std::ostream & operator<<(std::ostream & os,const Stroke & obj);
+        friend std::istream & operator>>(std::istream & is,Stroke & obj);
+};
 
 }

@@ -53,10 +53,12 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
 - (void)findActiveProcess {
 	NSString *process = [ProcessHooker getActiveProcessIdentifier];
 	NSLog(@"%@", process);
-
+    
+    [self setMouseButton:kRightButton];
 	state = kListen;
 	iStrokeAppDelegate *app = [[NSApplication sharedApplication] delegate];
 	[app doneChooseWindow];
+    
 }
 
 - (CGEventRef)callback:(CGEventTapProxy)proxy :(CGEventType)type :(CGEventRef)event :(void *)refcon {

@@ -25,7 +25,7 @@
 		E772DBF314E4424100A06FA8 /* testAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E772DBF214E4424100A06FA8 /* testAppDelegate.m */; };
 		E772DBF614E4424100A06FA8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E772DBF414E4424100A06FA8 /* MainMenu.xib */; };
 		E772DBF914E4424100A06FE6 /* Gesture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E772DBF914E4424100A06FE5 /* Gesture.mm */; };
-		E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.m */; };
+		E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,8 +69,8 @@
 		E772DBF514E4424100A06FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E772DBF914E4424100A06FE5 /* Gesture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Gesture.mm; sourceTree = "<group>"; };
 		E772DBF914E4424100A06FE7 /* Gesture.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Gesture.hh; sourceTree = "<group>"; };
-		E7C4ED6D14E6DF6D006444E0 /* DrawStrokeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawStrokeView.h; sourceTree = "<group>"; };
-		E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawStrokeView.m; sourceTree = "<group>"; };
+		E7C4ED6D14E6DF6D006444E0 /* DrawStrokeView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawStrokeView.hh; sourceTree = "<group>"; };
+		E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawStrokeView.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +180,8 @@
 		E7C4ED7014E6DFF5006444E0 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				E7C4ED6D14E6DF6D006444E0 /* DrawStrokeView.h */,
-				E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.m */,
+				E7C4ED6D14E6DF6D006444E0 /* DrawStrokeView.hh */,
+				E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.mm */,
 				E750794614E2E70F00964C83 /* iStrokeAppDelegate.hh */,
 				E750794714E2E70F00964C83 /* iStrokeAppDelegate.mm */,
 				E750794914E2E70F00964C83 /* MainMenu.xib */,
@@ -315,7 +315,7 @@
 				E7727A1A14E4544A00935AE7 /* Application.m in Sources */,
 				E7727A1D14E4546C00935AE7 /* Stroke.mm in Sources */,
 				E772DBF914E4424100A06FE6 /* Gesture.mm in Sources */,
-				E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.m in Sources */,
+				E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

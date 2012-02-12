@@ -6,7 +6,7 @@
 //  Copyright 2012年 PKU. All rights reserved.
 //
 
-#import "DrawStrokeView.h"
+#import "DrawStrokeView.hh"
 
 @implementation DrawStrokeView
 
@@ -14,16 +14,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self awakeFromNib];
     }
     
     return self;
 }
 
--(void)awakeFromNib
-{
-    strokePoint=[[NSMutableArray alloc]init];
-}
 - (void)dealloc
 {
     [super dealloc];
@@ -36,8 +31,11 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    if([strokePoint count]<8)
+    if(strokePoint.size()<8)
         return;
+    
+    std::list<int>::iterator it=strokePoint.begin();
+    int x,y;
     
     NSGraphicsContext *context=[NSGraphicsContext currentContext];
 	CGContextRef contextRef		= (CGContextRef) [context graphicsPort];
@@ -45,22 +43,22 @@
     CGContextSetRGBStrokeColor(contextRef, 1, 0, 0, 1);
     
     CGContextBeginPath(contextRef);
-    CGContextMoveToPoint(contextRef,[[strokePoint objectAtIndex:0] intValue],[[strokePoint objectAtIndex:1] intValue]);
+    CGContextMoveToPoint(contextRef,x=*it++,y=*it++);
     CGContextSetLineWidth(contextRef, 4);
     
-    for (NSUInteger i=1,n=[strokePoint count]/2; i<n; ++i) {
-        CGContextAddLineToPoint(contextRef,[[strokePoint objectAtIndex:2*i] intValue],[[strokePoint objectAtIndex:2*i+1] intValue]);	
+    while (it!=strokePoint.end()) {
+        CGContextAddLineToPoint(contextRef,x=*it++,y=*it++);
     }
     CGContextDrawPath(contextRef,kCGPathStroke);
 }
 
 -(void) addPoint:(int)x :(int)y
 {
-    [strokePoint addObject:[[NSNumber alloc] initWithInt:x]];
-    [strokePoint addObject:[[NSNumber alloc] initWithInt:y]];
+    strokePoint.push_back(x);
+    strokePoint.push_back(y);
 }
 -(void)clear
 {
-    [strokePoint removeAllObjects];
+    strokePoint.clear();
 }
 @end

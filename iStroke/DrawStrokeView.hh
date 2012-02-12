@@ -6,12 +6,11 @@
 //  Copyright 2012年 PKU. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
+#include <list>
 
 @interface DrawStrokeView : NSView {
 @private
-    NSMutableArray	*strokePoint;
+    std::list<int> strokePoint;
 }
 
 -(void) addPoint:(int)x :(int)y;

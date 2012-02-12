@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "EventListener.h"
 #import "Stroke.hh"
-#import "DrawStrokeView.h"
+#import "DrawStrokeView.hh"
 
 @interface iStrokeAppDelegate : NSObject <NSApplicationDelegate> {
 @private
@@ -20,9 +20,12 @@
     iStroke::Stroke *curStroke, *preStroke;    
     IBOutlet NSWindow *drawStrokeWindow;
     IBOutlet DrawStrokeView *drawStrokeView;
+    
+    NSMutableArray *gestures;
 }
 
 @property(assign) IBOutlet NSWindow *window;
+@property(assign) NSMutableArray *gestures;
 
 - (IBAction)toggleTrack:(NSButton *)sender;
 - (IBAction)chooseWindow:(id)sender;

@@ -7,12 +7,17 @@
 //
 
 #import "iStrokeAppDelegate.hh"
+#include <iostream>
+#include <fstream>
+#import "Gesture.hh"
 
+using namespace std;
 using namespace iStroke;
 
 @implementation iStrokeAppDelegate
 
 @synthesize window;
+@synthesize gestures;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
@@ -35,8 +40,12 @@ using namespace iStroke;
 - (void)applicationWillTerminate:(NSNotification *)notification {
 	[eventListener release];
     
-    delete curStroke;
-    delete preStroke;
+    if (curStroke) {
+        delete curStroke;
+    }
+    if(preStroke){
+        delete preStroke;
+    }
 }
 
 - (IBAction)toggleTrack:(NSButton *)sender {
@@ -65,6 +74,7 @@ using namespace iStroke;
 	window.isVisible = YES;
 	NSCursor *cursor = [NSCursor arrowCursor];
 	[cursor set];
+    
 }
 
 -(IBAction)test:(id)sender
@@ -86,17 +96,47 @@ using namespace iStroke;
     [drawStrokeView clear];
     drawStrokeWindow.isVisible=NO;
     
+    curStroke->finish();
+    
+    
     // NSLog(@"Comparing two stroke");
     if (preStroke->size()==0) {
         //   NSLog(@"no previou stroke");
     }
     else
     {
-        //double res=curStroke->compare(*preStroke);
-        //   NSLog(@"Distance: %f",res);
+      //  double res=curStroke->compare(*preStroke);
+      //  NSLog(@"Distance: %f",res);
     }
     delete preStroke;
     preStroke=curStroke;
     curStroke=new Stroke();
+    
 }
+
+-(NSArray *)gestures
+{
+    return gestures;
+}
+-(void)setGestures:(NSMutableArray *)a
+{
+    gestures=a;
+}
+-(void)insertObject:(Gesture *)g inGestureAtIndex:(NSUInteger)index
+{
+    [gestures insertObject:g atIndex:index];
+}
+-(void)removeObjetFromGestureAtIndex:(NSUInteger)index
+{
+    [gestures removeObjectAtIndex:index];
+}
+-(void)awakeFromNib
+{
+    Gesture *g=[[Gesture alloc] init];
+    g.key=1232;
+    
+    NSMutableArray *a=[NSMutableArray arrayWithObjects:g, nil];
+    [self setGestures:a];
+}
+
 @end
