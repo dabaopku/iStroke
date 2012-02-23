@@ -11,7 +11,7 @@
 #import "Stroke.hh"
 #import "DrawStrokeView.hh"
 
-@interface iStrokeAppDelegate : NSObject <NSApplicationDelegate> {
+@interface iStrokeAppDelegate : NSObject <NSApplicationDelegate,NSTableViewDataSource,NSTableViewDelegate> {
 @private
 	NSWindow *window;
 
@@ -20,6 +20,7 @@
     iStroke::Stroke *curStroke, *preStroke;    
     IBOutlet NSWindow *drawStrokeWindow;
     IBOutlet DrawStrokeView *drawStrokeView;
+    IBOutlet NSTabView *tableStroke;
     
     NSMutableArray *gestures;
 }

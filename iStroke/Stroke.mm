@@ -28,6 +28,7 @@ namespace iStroke
     Stroke::~Stroke()
     {
         if(p) delete []p;
+        p=0;
     }
 
     void Stroke::addPoint(double x, double y)
@@ -96,25 +97,40 @@ namespace iStroke
         return n;
     }
     
-    void Stroke::point(int index, double &x, double &y) const
+    double Stroke::x(int index) const
     {
-        assert(index<n);
-        x=p[index].x;
-        y=p[index].y;
+        assert(index>=0 && index<n);
+        return p[index].x;
     }
-    
+    double Stroke::y(int index) const
+    {
+        assert(index>=0 && index<n);
+        return p[index].y;
+    }
+    Stroke::Point Stroke::point(int index) const
+    {
+        assert(index>=0 && index<n);
+        return p[index];
+    }
     double Stroke::time(int index) const
     {
-        assert(index<n);
+        assert(index>=0 && index<n);
         return p[index].t;
     }
-    
     double Stroke::angle(int index) const
     {
-        assert(index<n);
+        assert(index>=0 && index<n);
         return p[index].alpha;
     }
-    
+    double Stroke::alpha(int index) const
+    {
+        assert(index>=0 && index<n);
+        return p[index].alpha;
+    }
+    int Stroke::getCapacity() const
+    {
+        return capacity;
+    }
     inline static double sqr(double x) { return x*x; }
     
     double Stroke::angleDiff(const Stroke &s, int i, int j) const
@@ -276,5 +292,16 @@ namespace iStroke
         }
         obj.finish();
         return is;
+    }
+    
+    Stroke * Stroke::clone()
+    {
+        Stroke * res=new Stroke(this->capacity);
+        for(int i=0;i<n;++i)
+        {
+            res->addPoint(p[i].x, p[i].y);
+        }
+        res->finish();
+        return res;
     }
 }

@@ -6,11 +6,8 @@
 //  Copyright 2012年 PKU. All rights reserved.
 //
 
-#include <list>
-
 @interface DrawStrokeView : NSView {
-@private
-    std::list<int> strokePoint;
+    NSBezierPath *path;
 }
 
 -(void) addPoint:(int)x :(int)y;

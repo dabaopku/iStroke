@@ -19,8 +19,15 @@
     return self;
 }
 
+-(void)awakeFromNib
+{
+    path=[[NSBezierPath bezierPath] retain];
+    [path setLineWidth:5.0];
+}
+
 - (void)dealloc
 {
+    [path release];
     [super dealloc];
 }
 
@@ -31,34 +38,29 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    if(strokePoint.size()<8)
+    
+    if ([path isEmpty]) {
         return;
-    
-    std::list<int>::iterator it=strokePoint.begin();
-    int x,y;
-    
-    NSGraphicsContext *context=[NSGraphicsContext currentContext];
-	CGContextRef contextRef		= (CGContextRef) [context graphicsPort];
-    
-    CGContextSetRGBStrokeColor(contextRef, 1, 0, 0, 1);
-    
-    CGContextBeginPath(contextRef);
-    CGContextMoveToPoint(contextRef,x=*it++,y=*it++);
-    CGContextSetLineWidth(contextRef, 4);
-    
-    while (it!=strokePoint.end()) {
-        CGContextAddLineToPoint(contextRef,x=*it++,y=*it++);
     }
-    CGContextDrawPath(contextRef,kCGPathStroke);
+    
+    [[NSColor redColor] set];
+    [path stroke];
 }
 
 -(void) addPoint:(int)x :(int)y
 {
-    strokePoint.push_back(x);
-    strokePoint.push_back(y);
+    if ([path isEmpty]) {
+        [path moveToPoint:NSMakePoint(x, y)];
+    }
+    else
+    {
+        [path lineToPoint:NSMakePoint(x, y)];
+    }
 }
 -(void)clear
 {
-    strokePoint.clear();
+    [path removeAllPoints];
+    return;
 }
+
 @end

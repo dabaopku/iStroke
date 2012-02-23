@@ -11,14 +11,20 @@
 #import "Stroke.hh"
 using namespace iStroke;
 
+#define STROKE_IMAGE_SIZE 256
+
 @interface Gesture : NSObject {
 
 @private
-    Stroke stroke;
+    Stroke * stroke;
     std::string name;
-    int key;
+    long key;
 }
-@property(assign) int key;
-@property(assign) Stroke stroke;
+@property(assign) long key;
+@property(assign) Stroke * stroke;
+
+-(id) initWithStroke:(Stroke*)stk;
+
+-(bool) saveToImage;
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E707927D14F4B90100DB036E /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = E707927C14F4B90100DB036E /* a.png */; };
+		E707928014F611C600DB036E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E707927F14F611C500DB036E /* OpenGL.framework */; };
 		E719195B14E2F70C00193FDB /* EventListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = E719195A14E2F70C00193FDB /* EventListener.mm */; };
 		E750793514E2E70F00964C83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E750793414E2E70F00964C83 /* Cocoa.framework */; };
 		E750793F14E2E70F00964C83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E750793D14E2E70F00964C83 /* InfoPlist.strings */; };
@@ -25,10 +27,14 @@
 		E772DBF314E4424100A06FA8 /* testAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E772DBF214E4424100A06FA8 /* testAppDelegate.m */; };
 		E772DBF614E4424100A06FA8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E772DBF414E4424100A06FA8 /* MainMenu.xib */; };
 		E772DBF914E4424100A06FE6 /* Gesture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E772DBF914E4424100A06FE5 /* Gesture.mm */; };
+		E7AC6F5714E8F578008D0A2D /* GestureItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7AC6F5614E8F578008D0A2D /* GestureItem.mm */; };
+		E7AC6F5B14E90B70008D0A2D /* DrawStrokeCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */; };
 		E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E707927C14F4B90100DB036E /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
+		E707927F14F611C500DB036E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		E719195914E2F70C00193FDB /* EventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListener.h; sourceTree = "<group>"; };
 		E719195A14E2F70C00193FDB /* EventListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EventListener.mm; sourceTree = "<group>"; };
 		E750793014E2E70F00964C83 /* iStroke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStroke.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +75,10 @@
 		E772DBF514E4424100A06FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E772DBF914E4424100A06FE5 /* Gesture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Gesture.mm; sourceTree = "<group>"; };
 		E772DBF914E4424100A06FE7 /* Gesture.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Gesture.hh; sourceTree = "<group>"; };
+		E7AC6F5514E8F578008D0A2D /* GestureItem.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GestureItem.hh; sourceTree = "<group>"; };
+		E7AC6F5614E8F578008D0A2D /* GestureItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GestureItem.mm; sourceTree = "<group>"; };
+		E7AC6F5914E90B70008D0A2D /* DrawStrokeCell.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawStrokeCell.hh; sourceTree = "<group>"; };
+		E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawStrokeCell.mm; sourceTree = "<group>"; };
 		E7C4ED6D14E6DF6D006444E0 /* DrawStrokeView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawStrokeView.hh; sourceTree = "<group>"; };
 		E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawStrokeView.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E707928014F611C600DB036E /* OpenGL.framework in Frameworks */,
 				E750793514E2E70F00964C83 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +126,7 @@
 		E750793314E2E70F00964C83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E707927F14F611C500DB036E /* OpenGL.framework */,
 				E750793414E2E70F00964C83 /* Cocoa.framework */,
 				E750793614E2E70F00964C83 /* Other Frameworks */,
 			);
@@ -134,6 +146,7 @@
 		E750793A14E2E70F00964C83 /* iStroke */ = {
 			isa = PBXGroup;
 			children = (
+				E707927C14F4B90100DB036E /* a.png */,
 				E7C4ED7014E6DFF5006444E0 /* Interface */,
 				E7C4ED7114E6E00D006444E0 /* Gesture */,
 				E7C4ED7214E6E021006444E0 /* Event */,
@@ -185,6 +198,10 @@
 				E750794614E2E70F00964C83 /* iStrokeAppDelegate.hh */,
 				E750794714E2E70F00964C83 /* iStrokeAppDelegate.mm */,
 				E750794914E2E70F00964C83 /* MainMenu.xib */,
+				E7AC6F5514E8F578008D0A2D /* GestureItem.hh */,
+				E7AC6F5614E8F578008D0A2D /* GestureItem.mm */,
+				E7AC6F5914E90B70008D0A2D /* DrawStrokeCell.hh */,
+				E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -287,6 +304,7 @@
 				E750793F14E2E70F00964C83 /* InfoPlist.strings in Resources */,
 				E750794514E2E70F00964C83 /* Credits.rtf in Resources */,
 				E750794B14E2E70F00964C83 /* MainMenu.xib in Resources */,
+				E707927D14F4B90100DB036E /* a.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +334,8 @@
 				E7727A1D14E4546C00935AE7 /* Stroke.mm in Sources */,
 				E772DBF914E4424100A06FE6 /* Gesture.mm in Sources */,
 				E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.mm in Sources */,
+				E7AC6F5714E8F578008D0A2D /* GestureItem.mm in Sources */,
+				E7AC6F5B14E90B70008D0A2D /* DrawStrokeCell.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

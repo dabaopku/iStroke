@@ -10,6 +10,7 @@
 #include <iostream>
 #include <fstream>
 #import "Gesture.hh"
+#import "DrawStrokeCell.hh"
 
 using namespace std;
 using namespace iStroke;
@@ -31,7 +32,7 @@ using namespace iStroke;
     [window makeKeyAndOrderFront:self];
     
     curStroke=new Stroke();
-    preStroke=new Stroke();
+    preStroke=0;
     
 	eventListener = [[EventListener alloc] init];
 	[eventListener start];
@@ -100,43 +101,51 @@ using namespace iStroke;
     
     
     // NSLog(@"Comparing two stroke");
-    if (preStroke->size()==0) {
+    if (!preStroke) {
         //   NSLog(@"no previou stroke");
     }
     else
     {
       //  double res=curStroke->compare(*preStroke);
       //  NSLog(@"Distance: %f",res);
+        delete preStroke;
     }
-    delete preStroke;
     preStroke=curStroke;
     curStroke=new Stroke();
     
+    DrawStrokeCell *cell=[[DrawStrokeCell alloc] initWithGesture:[[Gesture alloc] initWithStroke:preStroke]];
+    [gestures addObject:cell];
 }
 
--(NSArray *)gestures
-{
-    return gestures;
-}
--(void)setGestures:(NSMutableArray *)a
-{
-    gestures=a;
-}
--(void)insertObject:(Gesture *)g inGestureAtIndex:(NSUInteger)index
-{
-    [gestures insertObject:g atIndex:index];
-}
--(void)removeObjetFromGestureAtIndex:(NSUInteger)index
-{
-    [gestures removeObjectAtIndex:index];
-}
 -(void)awakeFromNib
 {
     Gesture *g=[[Gesture alloc] init];
     g.key=1232;
+    //DrawStrokeCell *cell=[[DrawStrokeCell alloc] initWithGesture:g];
     
-    NSMutableArray *a=[NSMutableArray arrayWithObjects:g, nil];
-    [self setGestures:a];
+    gestures=[[NSMutableArray alloc] initWithObjects:nil];
 }
 
+-(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return [gestures count];
+}
+-(CGFloat) tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
+{
+    return 80;
+}
+
+-(id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    DrawStrokeCell *cell=[gestures objectAtIndex:row];
+    return [cell image];
+    NSImage *img=[[NSImage alloc] init];
+    // NSImage *img2=[[NSImage alloc] init];
+    [img setSize:NSMakeSize(50, 50)];
+    //[img2 setBackgroundColor:[NSColor redColor]];
+     // [img drawAtPoint:NSMakePoint(0.5, 0.3) fromRect:NSMakeRect(0,0,0.3,0.2)
+     //       operation:NSCompositeSourceIn fraction:0.7];
+    return img;
+    return [gestures objectAtIndex:row];
+}
 @end
