@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-
-@interface Application : NSObject {
-    
+@interface Application:NSMutableArray{
+    NSString *identifier;
+    NSString *name;
 }
+
+-(void) addObject:(id)anObject;
 
 @end

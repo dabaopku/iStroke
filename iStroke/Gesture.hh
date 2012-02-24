@@ -12,6 +12,7 @@
 using namespace iStroke;
 
 #define STROKE_IMAGE_SIZE 256
+#define STROKE_IMAGE_MARGIN 16
 
 @interface Gesture : NSObject {
 
@@ -25,6 +26,7 @@ using namespace iStroke;
 
 -(id) initWithStroke:(Stroke*)stk;
 
--(bool) saveToImage;
+-(bool) saveImage;
+-(NSImage *) loadImage;
 
 @end

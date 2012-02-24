@@ -39,16 +39,22 @@
     NSColor *red=[NSColor redColor];
     NSColor *blue=[NSColor blueColor];
     NSBezierPath *path=[NSBezierPath bezierPath];    
-    [path setLineWidth:4.0];
+    [path setLineWidth:12.0];
     
-    for (int i=0,n=stroke->size()-1; i<n; ++i) {
+    for (int i=0,n=stroke->size()-2; i<n; ++i) {
         Stroke::Point p=stroke->point(i),
-            np=stroke->point(i+1);
+            q=stroke->point(i+1),
+            r=stroke->point(i+2);
         [[red blendedColorWithFraction:p.t ofColor:blue] set];
-        [path moveToPoint:NSMakePoint(p.x*(STROKE_IMAGE_SIZE-4)+2,
-                                      p.y*(STROKE_IMAGE_SIZE-4)+2)];
-        [path lineToPoint:NSMakePoint(np.x*(STROKE_IMAGE_SIZE-4)+2,
-                                      np.y*(STROKE_IMAGE_SIZE-4)+2)];
+        double px=p.x*(STROKE_IMAGE_SIZE-2*STROKE_IMAGE_MARGIN)+STROKE_IMAGE_MARGIN,
+            py=p.y*(STROKE_IMAGE_SIZE-2*STROKE_IMAGE_MARGIN)+STROKE_IMAGE_MARGIN,
+            qx=q.x*(STROKE_IMAGE_SIZE-2*STROKE_IMAGE_MARGIN)+STROKE_IMAGE_MARGIN,
+            qy=q.y*(STROKE_IMAGE_SIZE-2*STROKE_IMAGE_MARGIN)+STROKE_IMAGE_MARGIN,
+            rx=r.x*(STROKE_IMAGE_SIZE-2*STROKE_IMAGE_MARGIN)+STROKE_IMAGE_MARGIN,
+            ry=r.y*(STROKE_IMAGE_SIZE-2*STROKE_IMAGE_MARGIN)+STROKE_IMAGE_MARGIN;
+        [path moveToPoint:NSMakePoint(px,py)];
+        [path lineToPoint:NSMakePoint(qx,qy)];
+        [path lineToPoint:NSMakePoint(rx,ry)];
         [path stroke];
         [path removeAllPoints];
     }    
@@ -77,9 +83,9 @@
     [imgData writeToFile:path atomically:NO];
 }
 
--(bool)saveToImage
+-(bool)saveImage
 {
-    if(stroke->size()<10)
+    if(stroke->size()<3)
         return NO;
     
     NSImage *img=[[NSImage alloc] initWithSize:NSMakeSize(STROKE_IMAGE_SIZE, STROKE_IMAGE_SIZE)];
@@ -90,4 +96,10 @@
     return YES;
 }
 
+-(NSImage *) loadImage
+{
+    NSString * file=[NSHomeDirectory() stringByAppendingFormat:@"/Library/iStroke/image/%ld.jpg",key];
+    NSImage *img=[[NSImage alloc] initWithContentsOfFile:file];
+    return img;
+}
 @end

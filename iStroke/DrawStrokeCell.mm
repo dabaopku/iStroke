@@ -14,9 +14,8 @@
 {
     self = [super init];
     if (self) {
-        [g saveToImage];
-        NSString * file=@"../../iStroke/a.png";
-        NSImage *img=[[[NSImage alloc] initWithContentsOfFile:file] autorelease];
+        [g saveImage];
+        NSImage *img=[[g loadImage] autorelease];
         [self setImage:img];
     }
     

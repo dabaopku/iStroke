@@ -38,7 +38,6 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    
     if ([path isEmpty]) {
         return;
     }

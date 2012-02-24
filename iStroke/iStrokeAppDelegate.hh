@@ -10,6 +10,7 @@
 #import "EventListener.h"
 #import "Stroke.hh"
 #import "DrawStrokeView.hh"
+#import "Application.hh"
 
 @interface iStrokeAppDelegate : NSObject <NSApplicationDelegate,NSTableViewDataSource,NSTableViewDelegate> {
 @private
@@ -20,9 +21,9 @@
     iStroke::Stroke *curStroke, *preStroke;    
     IBOutlet NSWindow *drawStrokeWindow;
     IBOutlet DrawStrokeView *drawStrokeView;
-    IBOutlet NSTabView *tableStroke;
+    IBOutlet NSTableView *tableStroke;
     
-    NSMutableArray *gestures;
+    Application *gestures;
 }
 
 @property(assign) IBOutlet NSWindow *window;

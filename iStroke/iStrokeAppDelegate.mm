@@ -11,6 +11,7 @@
 #include <fstream>
 #import "Gesture.hh"
 #import "DrawStrokeCell.hh"
+#import "Action.hh"
 
 using namespace std;
 using namespace iStroke;
@@ -113,8 +114,10 @@ using namespace iStroke;
     preStroke=curStroke;
     curStroke=new Stroke();
     
-    DrawStrokeCell *cell=[[DrawStrokeCell alloc] initWithGesture:[[Gesture alloc] initWithStroke:preStroke]];
-    [gestures addObject:cell];
+    Action *act=[[Action alloc] initWithStroke:preStroke];
+    [gestures addObject:act];
+    [tableStroke reloadData];
+    
 }
 
 -(void)awakeFromNib
@@ -132,20 +135,26 @@ using namespace iStroke;
 }
 -(CGFloat) tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
 {
-    return 80;
+    return 64;
 }
 
 -(id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    DrawStrokeCell *cell=[gestures objectAtIndex:row];
-    return [cell image];
-    NSImage *img=[[NSImage alloc] init];
-    // NSImage *img2=[[NSImage alloc] init];
-    [img setSize:NSMakeSize(50, 50)];
-    //[img2 setBackgroundColor:[NSColor redColor]];
-     // [img drawAtPoint:NSMakePoint(0.5, 0.3) fromRect:NSMakeRect(0,0,0.3,0.2)
-     //       operation:NSCompositeSourceIn fraction:0.7];
-    return img;
-    return [gestures objectAtIndex:row];
+    NSString *col=[tableColumn identifier];
+    Action *act=[gestures objectAtIndex:row];
+    
+    if ([col isEqualToString:@"gesture"]) {
+        return [act image];
+    }
+    if ([col isEqualToString:@"name"]) {
+        return [act name];
+    }
+    if ([col isEqualToString:@"type"]) {
+        return [act name];
+    }
+    if ([col isEqualToString:@"cmd"]) {
+        return [act name];
+    }
+    return nil;
 }
 @end
