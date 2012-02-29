@@ -11,9 +11,10 @@
 #import "Stroke.hh"
 #import "DrawStrokeView.hh"
 #import "Application.hh"
+#import "Command.hh"
 
 @interface iStrokeAppDelegate : NSObject <NSApplicationDelegate,NSTableViewDataSource,NSTableViewDelegate> {
-@private
+
 	NSWindow *window;
 
 	EventListener *eventListener;
@@ -24,6 +25,8 @@
     IBOutlet NSTableView *tableStroke;
     
     Application *gestures;
+        
+    IBOutlet CommandTypeDelegate *commandTypeDelegate;
 }
 
 @property(assign) IBOutlet NSWindow *window;

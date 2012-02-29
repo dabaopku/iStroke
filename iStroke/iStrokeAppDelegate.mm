@@ -12,6 +12,7 @@
 #import "Gesture.hh"
 #import "DrawStrokeCell.hh"
 #import "Action.hh"
+#import "Command.hh"
 
 using namespace std;
 using namespace iStroke;
@@ -121,12 +122,10 @@ using namespace iStroke;
 }
 
 -(void)awakeFromNib
-{
-    Gesture *g=[[Gesture alloc] init];
-    g.key=1232;
-    //DrawStrokeCell *cell=[[DrawStrokeCell alloc] initWithGesture:g];
-    
+{    
     gestures=[[NSMutableArray alloc] initWithObjects:nil];
+    
+    commandTypeDelegate=[[CommandTypeDelegate alloc] init];
 }
 
 -(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
@@ -150,11 +149,32 @@ using namespace iStroke;
         return [act name];
     }
     if ([col isEqualToString:@"type"]) {
-        return [act name];
+        return CommandType::ToString(act.cmd.type);
     }
     if ([col isEqualToString:@"cmd"]) {
         return [act name];
     }
     return nil;
+}
+
+-(void) tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    NSString *col=[tableColumn identifier];
+    Action *act=[gestures objectAtIndex:row];
+    
+    if([col isEqualToString:@"type"])
+    {
+        act.cmd.type=[commandTypeDelegate index:object];
+    }
+}
+
+
+-(void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    if([[tableColumn identifier] isEqual:@"type"] && [cell isKindOfClass:[NSComboBoxCell class]])
+    {
+        [cell setRepresentedObject:[commandTypeDelegate typeList]];
+        [cell reloadData];
+    }
 }
 @end

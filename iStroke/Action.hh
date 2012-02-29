@@ -8,18 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "Gesture.hh"
+#import "Command.hh"
 
 @interface Action : NSObject {
 	Gesture *gesture;
     NSImage *image;
 	NSString *name;
-	NSObject *cmd;
+	Command *cmd;
 }
 
 @property(retain) Gesture *gesture;
 @property(retain) NSImage *image;
 @property(retain) NSString *name;
-@property(retain) NSObject *cmd;
+@property(retain) Command *cmd;
 
 -(id) initWithStroke:(Stroke *)s;
 

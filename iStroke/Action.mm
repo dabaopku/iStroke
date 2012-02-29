@@ -24,7 +24,7 @@
         [g saveImage];
         self.image=[g loadImage];
         self.name=@"gesture";
-        
+        self.cmd=[[Command alloc] init];
         [g release];
     }
     
