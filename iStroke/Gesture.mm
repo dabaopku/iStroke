@@ -23,10 +23,10 @@
     return self;
 }
 
--(void) release
+-(void) dealloc
 {
     delete stroke;
-    [super release];
+    [super dealloc];
 }
 
 -(void)draw:(NSImage*)img

@@ -272,7 +272,7 @@ namespace iStroke
         delete []prev_x;
         delete []prev_y;
         
-        return cost;
+        return (1.0-cost/infinity)*100;
     }
     
     ostream & operator<<(ostream & os,const Stroke & obj)

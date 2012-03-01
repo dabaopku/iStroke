@@ -7,12 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Action.hh"
+#import "Gesture.hh"
 
-@interface Application:NSMutableArray{
-    NSString *identifier;
-    NSString *name;
+namespace iStroke {
+   struct MatchResult
+    {
+        double score;
+        Action *action;
+    };
 }
 
--(void) addObject:(id)anObject;
+@interface Application : NSObject{
+    NSString *identifier;
+    NSString *name;
+    NSMutableArray *actions;
+    
+    Application *parent;
+    NSMutableArray *children;
+}
+
+@property(assign) NSMutableArray *actions;
+@property(retain) NSString *identifier;
+@property(retain) NSString *name;
+
+-(void) addAction:(id)action;
+-(NSArray*) allAction;
+-(iStroke::MatchResult) matchAction:(iStroke::Stroke *)stroke;
 
 @end

@@ -30,7 +30,7 @@
 }
 
 @property(assign) IBOutlet NSWindow *window;
-@property(assign) NSMutableArray *gestures;
+@property(assign) Application *gestures;
 
 - (IBAction)toggleTrack:(NSButton *)sender;
 - (IBAction)chooseWindow:(id)sender;

@@ -1,4 +1,4 @@
-//
+ //
 //  iStrokeAppDelegate.m
 //  iStroke
 //
@@ -116,28 +116,34 @@ using namespace iStroke;
     preStroke=curStroke;
     curStroke=new Stroke();
     
+    iStroke::MatchResult res=[gestures matchAction:preStroke];
+    NSLog(@"Best match: %@   Score: %f",res.action.name,res.score);
+    
+    
     Action *act=[[Action alloc] initWithStroke:preStroke];
-    [gestures addObject:act];
+    [gestures addAction:act];
+    act.name=[NSString stringWithFormat:@"stroke %i",[gestures.actions count]];
     [tableStroke reloadData];
+    
     
 }
 
 -(void)awakeFromNib
 {    
-    gestures=[[NSMutableArray alloc] initWithObjects:nil];
+    gestures=[[Application alloc] init];
     
     commandTypeDelegate=[[CommandTypeDelegate alloc] init];
 }
 
 -(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return [gestures count];
+    return [gestures.actions count];
 }
 
 -(id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSString *col=[tableColumn identifier];
-    Action *act=[gestures objectAtIndex:row];
+    Action *act=[gestures.actions objectAtIndex:row];
     
     if ([col isEqualToString:@"gesture"]) {
         return [act image];
@@ -157,7 +163,7 @@ using namespace iStroke;
 -(void) tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSString *col=[tableColumn identifier];
-    Action *act=[gestures objectAtIndex:row];
+    Action *act=[gestures.actions objectAtIndex:row];
     
     if([col isEqualToString:@"type"])
     {
