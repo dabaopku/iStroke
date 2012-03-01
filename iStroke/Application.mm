@@ -8,12 +8,15 @@
 
 #import "Application.hh"
 #import "Action.hh"
+#import "NSTextFieldCell+VerticalCenter.h"
 
 @implementation Application
 
 @synthesize name;
 @synthesize identifier;
 @synthesize actions;
+@synthesize children;
+@synthesize parent;
 
 -(id) init
 {
@@ -23,6 +26,7 @@
         children=[NSMutableArray new];
         parent=nil;
         actions=[NSMutableArray new];
+        //commandTypeDelegate=[[CommandTypeDelegate alloc] init];
     }
     return self;
 }
@@ -36,6 +40,7 @@
 {
     [actions release];
     [children release];
+    [commandTypeDelegate release];
 }
 
 -(NSArray *) allAction
@@ -73,5 +78,58 @@
     
     return res;
 }
+
+#pragma mark - NSTableView
+
+
+-(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return [actions count];
+}
+
+-(id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    NSString *col=[tableColumn identifier];
+    Action *act=[actions objectAtIndex:row];
+    
+    if ([col isEqualToString:@"gesture"]) {
+        return [act image];
+    }
+    if ([col isEqualToString:@"name"]) {
+        return [act name];
+    }
+    if ([col isEqualToString:@"type"]) {
+        return CommandType::ToString(act.cmd.type);
+    }
+    if ([col isEqualToString:@"cmd"]) {
+        return [act name];
+    }
+    return nil;
+}
+
+-(void) tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    NSString *col=[tableColumn identifier];
+    Action *act=[actions objectAtIndex:row];
+    
+    if([col isEqualToString:@"type"])
+    {
+        act.cmd.type=[commandTypeDelegate index:object];
+    }
+}
+
+-(void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    
+    if([[tableColumn identifier] isEqual:@"type"] && [cell isKindOfClass:[NSComboBoxCell class]])
+    {
+        [cell setRepresentedObject:[commandTypeDelegate typeList]];
+        [cell reloadData];
+    }
+    if ([cell isKindOfClass:[NSTextFieldCell class]]) {
+        [cell setVerticalCentering:YES];
+    }
+}
+
 
 @end

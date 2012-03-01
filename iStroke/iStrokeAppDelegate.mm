@@ -21,7 +21,6 @@ using namespace iStroke;
 @implementation iStrokeAppDelegate
 
 @synthesize window;
-@synthesize gestures;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
@@ -116,70 +115,48 @@ using namespace iStroke;
     preStroke=curStroke;
     curStroke=new Stroke();
     
-    iStroke::MatchResult res=[gestures matchAction:preStroke];
-    NSLog(@"Best match: %@   Score: %f",res.action.name,res.score);
+    // iStroke::MatchResult res=[gestures matchAction:preStroke];
+    // NSLog(@"Best match: %@   Score: %f",res.action.name,res.score);
     
     
-    Action *act=[[Action alloc] initWithStroke:preStroke];
+    Application *app=[[Application alloc] init];
+     Action *act=[[Action alloc] initWithStroke:preStroke];
     [gestures addAction:act];
+    [gestures.children addObject:app];
     act.name=[NSString stringWithFormat:@"stroke %i",[gestures.actions count]];
     [tableStroke reloadData];
-    
+    [appTable reloadData];
     
 }
 
--(void)awakeFromNib
-{    
-    gestures=[[Application alloc] init];
-    
-    commandTypeDelegate=[[CommandTypeDelegate alloc] init];
-}
+#pragma mark - NSOutlineView
 
--(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
+-(id) outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
 {
-    return [gestures.actions count];
-}
-
--(id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
-{
-    NSString *col=[tableColumn identifier];
-    Action *act=[gestures.actions objectAtIndex:row];
-    
-    if ([col isEqualToString:@"gesture"]) {
-        return [act image];
+    if (item) {
+        return [[(Application*)item children] objectAtIndex:index];
     }
-    if ([col isEqualToString:@"name"]) {
-        return [act name];
-    }
-    if ([col isEqualToString:@"type"]) {
-        return CommandType::ToString(act.cmd.type);
-    }
-    if ([col isEqualToString:@"cmd"]) {
-        return [act name];
-    }
-    return nil;
-}
-
--(void) tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
-{
-    NSString *col=[tableColumn identifier];
-    Action *act=[gestures.actions objectAtIndex:row];
-    
-    if([col isEqualToString:@"type"])
+    else
     {
-        act.cmd.type=[commandTypeDelegate index:object];
+        return gestures;
     }
 }
--(void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+
+-(BOOL) outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
 {
+    return YES;
+}
+
+-(NSInteger) outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
+{
+    if(item==nil)
+        return 1;
     
-    if([[tableColumn identifier] isEqual:@"type"] && [cell isKindOfClass:[NSComboBoxCell class]])
-    {
-        [cell setRepresentedObject:[commandTypeDelegate typeList]];
-        [cell reloadData];
-    }
-    if ([cell isKindOfClass:[NSTextFieldCell class]]) {
-        [cell setVerticalCentering:YES];
-    }
+    return [[(Application *)item children] count];
+}
+
+-(id) outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
+{
+    return ((Application*)item).name;
 }
 @end

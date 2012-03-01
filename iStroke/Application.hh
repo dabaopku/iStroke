@@ -18,18 +18,22 @@ namespace iStroke {
     };
 }
 
-@interface Application : NSObject{
+@interface Application : NSObject<NSTableViewDataSource,NSTableViewDelegate>{
     NSString *identifier;
     NSString *name;
     NSMutableArray *actions;
     
     Application *parent;
     NSMutableArray *children;
+    
+    IBOutlet CommandTypeDelegate *commandTypeDelegate;
 }
 
-@property(assign) NSMutableArray *actions;
+@property(retain) NSMutableArray *actions;
 @property(retain) NSString *identifier;
 @property(retain) NSString *name;
+@property(retain) NSMutableArray *children;
+@property(retain) Application *parent;
 
 -(void) addAction:(id)action;
 -(NSArray*) allAction;
