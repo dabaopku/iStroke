@@ -65,7 +65,7 @@
 {
     NSFileManager *fm=[NSFileManager defaultManager];
     NSString *dir=[NSHomeDirectory() stringByAppendingFormat:@"/Library/iStroke/image/"];
-    NSString *path=[dir stringByAppendingFormat:@"%ld.jpg",key];
+    NSString *path=[dir stringByAppendingFormat:@"%ld.png",key];
     
     BOOL isDir=YES;
     if (![fm fileExistsAtPath:dir isDirectory:&isDir]) {
@@ -79,7 +79,7 @@
     NSData *imgData=[img TIFFRepresentation];
     NSBitmapImageRep *imgRep=[NSBitmapImageRep imageRepWithData:imgData];
     NSDictionary *imgProps=[NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:0.9] forKey:NSImageCompressionFactor];
-    imgData=[imgRep representationUsingType:NSJPEGFileType properties:imgProps];
+    imgData=[imgRep representationUsingType:NSPNGFileType properties:imgProps];
     [imgData writeToFile:path atomically:NO];
 }
 
@@ -98,7 +98,7 @@
 
 -(NSImage *) loadImage
 {
-    NSString * file=[NSHomeDirectory() stringByAppendingFormat:@"/Library/iStroke/image/%ld.jpg",key];
+    NSString * file=[NSHomeDirectory() stringByAppendingFormat:@"/Library/iStroke/image/%ld.png",key];
     NSImage *img=[[NSImage alloc] initWithContentsOfFile:file];
     return img;
 }

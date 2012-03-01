@@ -13,6 +13,7 @@
 #import "DrawStrokeCell.hh"
 #import "Action.hh"
 #import "Command.hh"
+#import "NSTextFieldCell+VerticalCenter.h"
 
 using namespace std;
 using namespace iStroke;
@@ -132,10 +133,6 @@ using namespace iStroke;
 {
     return [gestures count];
 }
--(CGFloat) tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
-{
-    return 64;
-}
 
 -(id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
@@ -167,14 +164,16 @@ using namespace iStroke;
         act.cmd.type=[commandTypeDelegate index:object];
     }
 }
-
-
 -(void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
+    
     if([[tableColumn identifier] isEqual:@"type"] && [cell isKindOfClass:[NSComboBoxCell class]])
     {
         [cell setRepresentedObject:[commandTypeDelegate typeList]];
         [cell reloadData];
+    }
+    if ([cell isKindOfClass:[NSTextFieldCell class]]) {
+        [cell setVerticalCentering:YES];
     }
 }
 @end

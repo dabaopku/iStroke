@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E707928014F611C600DB036E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E707927F14F611C500DB036E /* OpenGL.framework */; };
 		E719195B14E2F70C00193FDB /* EventListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = E719195A14E2F70C00193FDB /* EventListener.mm */; };
+		E73AB3D614FFCC7B0040C595 /* NSTextFieldCell+VerticalCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E73AB3D514FFCC7B0040C595 /* NSTextFieldCell+VerticalCenter.m */; };
 		E750793514E2E70F00964C83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E750793414E2E70F00964C83 /* Cocoa.framework */; };
 		E750793F14E2E70F00964C83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E750793D14E2E70F00964C83 /* InfoPlist.strings */; };
 		E750794214E2E70F00964C83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E750794114E2E70F00964C83 /* main.m */; };
@@ -38,6 +39,8 @@
 		E707927F14F611C500DB036E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		E719195914E2F70C00193FDB /* EventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListener.h; sourceTree = "<group>"; };
 		E719195A14E2F70C00193FDB /* EventListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EventListener.mm; sourceTree = "<group>"; };
+		E73AB3D414FFCC7B0040C595 /* NSTextFieldCell+VerticalCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextFieldCell+VerticalCenter.h"; sourceTree = "<group>"; };
+		E73AB3D514FFCC7B0040C595 /* NSTextFieldCell+VerticalCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextFieldCell+VerticalCenter.m"; sourceTree = "<group>"; };
 		E750793014E2E70F00964C83 /* iStroke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStroke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E750793414E2E70F00964C83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E750793714E2E70F00964C83 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -225,6 +228,8 @@
 				E7AC6F5614E8F578008D0A2D /* GestureItem.mm */,
 				E7AC6F5914E90B70008D0A2D /* DrawStrokeCell.hh */,
 				E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */,
+				E73AB3D414FFCC7B0040C595 /* NSTextFieldCell+VerticalCenter.h */,
+				E73AB3D514FFCC7B0040C595 /* NSTextFieldCell+VerticalCenter.m */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				E7AC6F5B14E90B70008D0A2D /* DrawStrokeCell.mm in Sources */,
 				E76D7B6C14F7F7A3004DA0E5 /* Action.mm in Sources */,
 				E771E71014FCEDAF00AF0524 /* Command.mm in Sources */,
+				E73AB3D614FFCC7B0040C595 /* NSTextFieldCell+VerticalCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
