@@ -24,14 +24,15 @@ using namespace iStroke;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
+    drawStrokeWindow.isVisible=NO;
     [drawStrokeWindow setLevel:NSFloatingWindowLevel];
     [drawStrokeWindow setOpaque:NO];
     [drawStrokeWindow setBackgroundColor:[NSColor clearColor]];
     [drawStrokeWindow setStyleMask:NSBorderlessWindowMask];
-    drawStrokeWindow.isVisible=NO;
     [drawStrokeWindow setFrame:[[NSScreen mainScreen] frame] display:YES];
     
     [window makeKeyAndOrderFront:self];
+    [window setLevel:NSFloatingWindowLevel];
     
     curStroke=new Stroke();
     preStroke=0;
@@ -73,8 +74,14 @@ using namespace iStroke;
 	[eventListener chooseWindowMode];
 }
 
-- (void)doneChooseWindow {
-	[[NSApplication sharedApplication] activateIgnoringOtherApps:NO];
+- (void)doneChooseWindow:(NSString *)process
+{
+    BOOL res=[appManager addApplication:process];
+    if (res) {
+        [appTable reloadData];
+    }
+    
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:NO];
 	window.isVisible = YES;
 	NSCursor *cursor = [NSCursor arrowCursor];
 	[cursor set];
@@ -120,10 +127,10 @@ using namespace iStroke;
     // NSLog(@"Best match: %@   Score: %f",res.action.name,res.score);
     
     
-    Application *app=[[Application alloc] init];
+    //Application *app=[[Application alloc] init];
      Action *act=[[Action alloc] initWithStroke:preStroke];
     [appManager addAction:act];
-    [appManager.applications addObject:app];
+  //  [appManager.applications addObject:app];
     act.name=[NSString stringWithFormat:@"stroke %i",[appManager.applications count]];
     [tableStroke reloadData];
     [appTable reloadData];

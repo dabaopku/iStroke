@@ -97,12 +97,47 @@
     [commandTypeDelegate release];
 }
 
+-(Application *) findApplication:(NSString *)identifier
+{
+    NSMutableArray *queue=[NSMutableArray new];
+    [queue addObjectsFromArray:applications];
+    while ([queue count]>0) {
+        Application *app=[queue objectAtIndex:0];
+        [queue removeObjectAtIndex:0];
+        if ([app.identifier isEqualToString:identifier]) {
+            return app;
+        }
+        [queue addObjectsFromArray:app.children];
+    }
+    return nil;
+}
+
 -(void) addAction:(id)action
 {
     assert([action isKindOfClass:[Action class]]);
     [curApp.actions addObject:[action retain]];
 }
 
+-(BOOL) addApplication:(NSString *)appIdentifier
+{
+    Application *app=[self findApplication:appIdentifier];
+    if (app!=nil) {
+        return NO;
+    }
+    app=[[Application alloc] init];
+    app.identifier=appIdentifier;
+    app.name=appIdentifier;
+    
+    Application *parent=curApp.parent;
+    if (parent==nil) {
+        [applications addObject:app];
+    }
+    else
+    {
+        [parent.children addObject:app];
+    }
+    return YES;
+}
 
 #pragma mark - NSOutlineView
 
@@ -119,7 +154,10 @@
 
 -(BOOL) outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
 {
-    return YES;
+    if (!item) {
+        return [applications count]>1;
+    }
+    return [[(Application*)item children] count]>0;
 }
 
 -(NSInteger) outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
@@ -135,6 +173,13 @@
     return ((Application*)item).name;
 }
 
+
+-(void) outlineView:(NSOutlineView *)outlineView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
+{
+    if ([item isKindOfClass:[Application class]]) {
+        [(Application *)item setName:object];
+    }
+}
 
 
 #pragma mark - NSTableView

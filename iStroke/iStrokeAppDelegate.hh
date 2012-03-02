@@ -33,7 +33,7 @@
 
 - (IBAction)toggleTrack:(NSButton *)sender;
 - (IBAction)chooseWindow:(id)sender;
-- (void)doneChooseWindow;
+- (void)doneChooseWindow:(NSString *)process;
 
 - (IBAction)test:(id)sender;
 

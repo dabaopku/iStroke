@@ -51,7 +51,9 @@ namespace iStroke {
 @property(retain) NSMutableArray * applications;
 @property(retain) Application *curApp;
 
--(void) addAction:(id)action;
+-(Application *) findApplication:(NSString *)identifier;
 
+-(void) addAction:(id)action;
+-(BOOL) addApplication:(NSString *)appIdentifier;
 
 @end

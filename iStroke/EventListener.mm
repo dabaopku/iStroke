@@ -57,7 +57,7 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
     [self setMouseButton:kRightButton];
 	state = kListen;
 	iStrokeAppDelegate *app = [[NSApplication sharedApplication] delegate];
-	[app doneChooseWindow];
+	[app doneChooseWindow:process];
     
 }
 
