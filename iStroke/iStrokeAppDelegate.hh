@@ -13,7 +13,7 @@
 #import "Application.hh"
 #import "Command.hh"
 
-@interface iStrokeAppDelegate : NSObject <NSApplicationDelegate,NSOutlineViewDataSource,NSOutlineViewDelegate> {
+@interface iStrokeAppDelegate : NSObject <NSApplicationDelegate> {
 
 	NSWindow *window;
 
@@ -25,7 +25,7 @@
     IBOutlet NSTableView *tableStroke;
     IBOutlet NSOutlineView *appTable;
     
-    IBOutlet Application *gestures;
+    IBOutlet ApplicationManager *appManager;
 }
 
 @property(assign) IBOutlet NSWindow *window;

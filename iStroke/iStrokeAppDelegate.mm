@@ -38,6 +38,7 @@ using namespace iStroke;
     
 	eventListener = [[EventListener alloc] init];
 	[eventListener start];
+    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
@@ -121,42 +122,11 @@ using namespace iStroke;
     
     Application *app=[[Application alloc] init];
      Action *act=[[Action alloc] initWithStroke:preStroke];
-    [gestures addAction:act];
-    [gestures.children addObject:app];
-    act.name=[NSString stringWithFormat:@"stroke %i",[gestures.actions count]];
+    [appManager addAction:act];
+    [appManager.applications addObject:app];
+    act.name=[NSString stringWithFormat:@"stroke %i",[appManager.applications count]];
     [tableStroke reloadData];
     [appTable reloadData];
     
-}
-
-#pragma mark - NSOutlineView
-
--(id) outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
-{
-    if (item) {
-        return [[(Application*)item children] objectAtIndex:index];
-    }
-    else
-    {
-        return gestures;
-    }
-}
-
--(BOOL) outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
-{
-    return YES;
-}
-
--(NSInteger) outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
-{
-    if(item==nil)
-        return 1;
-    
-    return [[(Application *)item children] count];
-}
-
--(id) outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
-{
-    return ((Application*)item).name;
 }
 @end

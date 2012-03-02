@@ -18,7 +18,7 @@ namespace iStroke {
     };
 }
 
-@interface Application : NSObject<NSTableViewDataSource,NSTableViewDelegate>{
+@interface Application : NSObject{
     NSString *identifier;
     NSString *name;
     NSMutableArray *actions;
@@ -26,7 +26,6 @@ namespace iStroke {
     Application *parent;
     NSMutableArray *children;
     
-    IBOutlet CommandTypeDelegate *commandTypeDelegate;
 }
 
 @property(retain) NSMutableArray *actions;
@@ -35,8 +34,24 @@ namespace iStroke {
 @property(retain) NSMutableArray *children;
 @property(retain) Application *parent;
 
--(void) addAction:(id)action;
 -(NSArray*) allAction;
 -(iStroke::MatchResult) matchAction:(iStroke::Stroke *)stroke;
+
+@end
+
+@interface ApplicationManager:NSObject
+    <NSOutlineViewDataSource,NSOutlineViewDelegate,NSTableViewDataSource,NSTableViewDelegate> {
+        
+    NSMutableArray * applications;
+    Application * curApp;
+
+    IBOutlet CommandTypeDelegate *commandTypeDelegate;
+}
+
+@property(retain) NSMutableArray * applications;
+@property(retain) Application *curApp;
+
+-(void) addAction:(id)action;
+
 
 @end

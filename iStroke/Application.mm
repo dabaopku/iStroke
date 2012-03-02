@@ -30,17 +30,11 @@
     }
     return self;
 }
--(void) addAction:(id)action
-{
-    assert([action isKindOfClass:[Action class]]);
-    [self.actions addObject:[action retain]];
-}
 
 -(void) dealloc
 {
     [actions release];
     [children release];
-    [commandTypeDelegate release];
 }
 
 -(NSArray *) allAction
@@ -79,18 +73,82 @@
     return res;
 }
 
+@end
+
+@implementation ApplicationManager
+
+@synthesize applications;
+@synthesize curApp;
+
+-(id) init
+{
+    self=[super init];
+    if (self) {
+        applications=[NSMutableArray new];
+        curApp=[[Application alloc] init];
+        curApp.name=NSLocalizedString(@"Default", @"");
+        [applications addObject:[curApp retain]];
+    }
+    return self;
+}
+
+-(void) dealloc
+{
+    [commandTypeDelegate release];
+}
+
+-(void) addAction:(id)action
+{
+    assert([action isKindOfClass:[Action class]]);
+    [curApp.actions addObject:[action retain]];
+}
+
+
+#pragma mark - NSOutlineView
+
+-(id) outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
+{
+    if (item) {
+        return [[(Application*)item children] objectAtIndex:index];
+    }
+    else
+    {
+        return [applications objectAtIndex:index];
+    }
+}
+
+-(BOOL) outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
+{
+    return YES;
+}
+
+-(NSInteger) outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
+{
+    if(item==nil)
+        return [applications count];
+    
+    return [[(Application *)item children] count];
+}
+
+-(id) outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
+{
+    return ((Application*)item).name;
+}
+
+
+
 #pragma mark - NSTableView
 
 
 -(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return [actions count];
+    return [curApp.actions count];
 }
 
 -(id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSString *col=[tableColumn identifier];
-    Action *act=[actions objectAtIndex:row];
+    Action *act=[curApp.actions objectAtIndex:row];
     
     if ([col isEqualToString:@"gesture"]) {
         return [act image];
@@ -110,7 +168,7 @@
 -(void) tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSString *col=[tableColumn identifier];
-    Action *act=[actions objectAtIndex:row];
+    Action *act=[curApp.actions objectAtIndex:row];
     
     if([col isEqualToString:@"type"])
     {
@@ -127,9 +185,20 @@
         [cell reloadData];
     }
     if ([cell isKindOfClass:[NSTextFieldCell class]]) {
-        [cell setVerticalCentering:YES];
+        [(NSTextFieldCell *)cell setVerticalCentering:YES];
     }
 }
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+
