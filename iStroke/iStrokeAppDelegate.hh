@@ -23,7 +23,7 @@
     IBOutlet NSWindow *drawStrokeWindow;
     IBOutlet DrawStrokeView *drawStrokeView;
     IBOutlet NSTableView *tableStroke;
-    IBOutlet NSOutlineView *appTable;
+    IBOutlet NSOutlineView *applicationOutlineView;
     
     IBOutlet ApplicationManager *appManager;
 }
@@ -36,6 +36,7 @@
 - (void)doneChooseWindow:(NSString *)process;
 
 - (IBAction)test:(id)sender;
+-(IBAction) addGroup:(id)sender;
 
 -(void)addPoint:(double)x :(double)y;
 -(void)doneStroke;

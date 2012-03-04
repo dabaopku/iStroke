@@ -6,9 +6,12 @@
 //  Copyright 2012年 PKU. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 #import "Action.hh"
 #import "Gesture.hh"
+
+#define ApplicationPasteType @"ApplicationPasteType"
+#define GesturePasteType @"GesturePasteType"
 
 namespace iStroke {
    struct MatchResult
@@ -25,7 +28,6 @@ namespace iStroke {
     
     Application *parent;
     NSMutableArray *children;
-    
 }
 
 @property(retain) NSMutableArray *actions;
@@ -36,6 +38,8 @@ namespace iStroke {
 
 -(NSArray*) allAction;
 -(iStroke::MatchResult) matchAction:(iStroke::Stroke *)stroke;
+-(void) addChildApplication:(Application *)app;
+-(void) removeFromParent;
 
 @end
 
@@ -46,6 +50,8 @@ namespace iStroke {
     Application * curApp;
 
     IBOutlet CommandTypeDelegate *commandTypeDelegate;
+    IBOutlet NSTableView * gestureTableView;
+    IBOutlet NSOutlineView *applicationOutlineView;
 }
 
 @property(retain) NSMutableArray * applications;
@@ -55,5 +61,6 @@ namespace iStroke {
 
 -(void) addAction:(id)action;
 -(BOOL) addApplication:(NSString *)appIdentifier;
+-(void) addGroup;
 
 @end

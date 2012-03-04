@@ -32,13 +32,16 @@ using namespace iStroke;
     [drawStrokeWindow setFrame:[[NSScreen mainScreen] frame] display:YES];
     
     [window makeKeyAndOrderFront:self];
-    [window setLevel:NSFloatingWindowLevel];
     
     curStroke=new Stroke();
     preStroke=0;
     
 	eventListener = [[EventListener alloc] init];
 	[eventListener start];
+    
+    
+    [applicationOutlineView registerForDraggedTypes:
+     [NSArray arrayWithObject:ApplicationPasteType] ];
     
 }
 
@@ -78,16 +81,20 @@ using namespace iStroke;
 {
     BOOL res=[appManager addApplication:process];
     if (res) {
-        [appTable reloadData];
+        [applicationOutlineView reloadData];
     }
     
-    [[NSApplication sharedApplication] activateIgnoringOtherApps:NO];
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 	window.isVisible = YES;
 	NSCursor *cursor = [NSCursor arrowCursor];
 	[cursor set];
     
 }
 
+-(IBAction) addGroup:(id)sender
+{
+    [appManager addGroup];
+}
 -(IBAction)test:(id)sender
 {
     [drawStrokeWindow makeKeyAndOrderFront:self];
@@ -133,7 +140,7 @@ using namespace iStroke;
   //  [appManager.applications addObject:app];
     act.name=[NSString stringWithFormat:@"stroke %i",[appManager.applications count]];
     [tableStroke reloadData];
-    [appTable reloadData];
+    [applicationOutlineView reloadData];
     
 }
 @end

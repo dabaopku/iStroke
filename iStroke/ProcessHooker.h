@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
+#define kiStrokeIdentifier @"cn.edu.pku.dabao.iStroke"
 
 @interface ProcessHooker : NSObject {
 

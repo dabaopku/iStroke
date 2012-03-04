@@ -52,7 +52,6 @@ CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef
 
 - (void)findActiveProcess {
 	NSString *process = [ProcessHooker getActiveProcessIdentifier];
-	NSLog(@"%@", process);
     
     [self setMouseButton:kRightButton];
 	state = kListen;

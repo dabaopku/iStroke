@@ -32,7 +32,7 @@ We can use NSApplicationBundleIdentifier to distinguish applications
 	return [dict objectForKey:@"NSApplicationBundleIdentifier"];
 }
 
-static NSString *iStrokeIdentifier = @"cn.edu.pku.dabao.iStroke";
+static NSString *iStrokeIdentifier = kiStrokeIdentifier;
 
 + (bool)isStroke {
 	NSString *str = [self getActiveProcessIdentifier];
