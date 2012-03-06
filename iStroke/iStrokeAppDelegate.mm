@@ -79,7 +79,7 @@ using namespace iStroke;
 
 - (void)doneChooseWindow:(NSString *)process
 {
-    BOOL res=[appManager addApplication:process];
+    BOOL res=[applicationOutlineView.appManager addApplication:process];
     if (res) {
         [applicationOutlineView reloadData];
     }
@@ -93,7 +93,7 @@ using namespace iStroke;
 
 -(IBAction) addGroup:(id)sender
 {
-    [appManager addGroup];
+    [applicationOutlineView.appManager addGroup];
 }
 -(IBAction)test:(id)sender
 {
@@ -136,11 +136,16 @@ using namespace iStroke;
     
     //Application *app=[[Application alloc] init];
      Action *act=[[Action alloc] initWithStroke:preStroke];
-    [appManager addAction:act];
+    [applicationOutlineView.appManager addAction:act];
   //  [appManager.applications addObject:app];
-    act.name=[NSString stringWithFormat:@"stroke %i",[appManager.applications count]];
+    act.name=[NSString stringWithFormat:@"stroke %i",[applicationOutlineView.appManager.applications count]];
     [tableStroke reloadData];
     [applicationOutlineView reloadData];
     
+}
+
+-(IBAction) save:(id)sender
+{
+    [applicationOutlineView.appManager save];
 }
 @end

@@ -12,6 +12,7 @@
 #import "DrawStrokeView.hh"
 #import "Application.hh"
 #import "Command.hh"
+#import "ApplicationOutlineView.hh"
 
 @interface iStrokeAppDelegate : NSObject <NSApplicationDelegate> {
 
@@ -23,9 +24,8 @@
     IBOutlet NSWindow *drawStrokeWindow;
     IBOutlet DrawStrokeView *drawStrokeView;
     IBOutlet NSTableView *tableStroke;
-    IBOutlet NSOutlineView *applicationOutlineView;
+    IBOutlet ApplicationOutlineView *applicationOutlineView;
     
-    IBOutlet ApplicationManager *appManager;
 }
 
 @property(assign) IBOutlet NSWindow *window;
@@ -37,6 +37,7 @@
 
 - (IBAction)test:(id)sender;
 -(IBAction) addGroup:(id)sender;
+-(IBAction) save:(id)sender;
 
 -(void)addPoint:(double)x :(double)y;
 -(void)doneStroke;

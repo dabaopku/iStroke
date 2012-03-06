@@ -26,6 +26,8 @@
 		E7AC6F5714E8F578008D0A2D /* GestureItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7AC6F5614E8F578008D0A2D /* GestureItem.mm */; };
 		E7AC6F5B14E90B70008D0A2D /* DrawStrokeCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */; };
 		E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.mm */; };
+		E7DCA2A815064A6400915E49 /* ApplicationManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7DCA2A615064A6400915E49 /* ApplicationManager.mm */; };
+		E7DCA2AC15064D0400915E49 /* ApplicationOutlineView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7DCA2AB15064D0400915E49 /* ApplicationOutlineView.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,10 @@
 		E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawStrokeCell.mm; sourceTree = "<group>"; };
 		E7C4ED6D14E6DF6D006444E0 /* DrawStrokeView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawStrokeView.hh; sourceTree = "<group>"; };
 		E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawStrokeView.mm; sourceTree = "<group>"; };
+		E7DCA2A615064A6400915E49 /* ApplicationManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApplicationManager.mm; sourceTree = "<group>"; };
+		E7DCA2A715064A6400915E49 /* ApplicationManager.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ApplicationManager.hh; sourceTree = "<group>"; };
+		E7DCA2AA15064D0400915E49 /* ApplicationOutlineView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ApplicationOutlineView.hh; sourceTree = "<group>"; };
+		E7DCA2AB15064D0400915E49 /* ApplicationOutlineView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApplicationOutlineView.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,10 @@
 			children = (
 				E7727A1814E4544A00935AE7 /* Application.hh */,
 				E7727A1914E4544A00935AE7 /* Application.mm */,
+				E7DCA2A715064A6400915E49 /* ApplicationManager.hh */,
+				E7DCA2A615064A6400915E49 /* ApplicationManager.mm */,
+				E7DCA2AA15064D0400915E49 /* ApplicationOutlineView.hh */,
+				E7DCA2AB15064D0400915E49 /* ApplicationOutlineView.mm */,
 				E76D7B6A14F7F7A1004DA0E5 /* Action.hh */,
 				E76D7B6B14F7F7A2004DA0E5 /* Action.mm */,
 				E771E70E14FCEDAF00AF0524 /* Command.hh */,
@@ -278,6 +288,8 @@
 				E76D7B6C14F7F7A3004DA0E5 /* Action.mm in Sources */,
 				E771E71014FCEDAF00AF0524 /* Command.mm in Sources */,
 				E73AB3D614FFCC7B0040C595 /* NSTextFieldCell+VerticalCenter.m in Sources */,
+				E7DCA2A815064A6400915E49 /* ApplicationManager.mm in Sources */,
+				E7DCA2AC15064D0400915E49 /* ApplicationOutlineView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

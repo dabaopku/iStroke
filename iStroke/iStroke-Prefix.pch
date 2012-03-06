@@ -7,3 +7,6 @@
 #import <Cocoa/Cocoa.h>
 
 #endif
+
+
+#define kiStrokeIdentifier @"cn.edu.pku.dabao.iStroke"
