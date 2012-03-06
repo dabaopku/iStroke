@@ -53,15 +53,15 @@
     [curApp.actions addObject:[action retain]];
 }
 
--(BOOL) addApplication:(NSString *)appIdentifier
+-(BOOL) addApplication:(NSString *)identifier :(NSString *)name
 {
-    Application *app=[self findApplication:appIdentifier];
+    Application *app=[self findApplication:identifier];
     if (app!=nil) {
         return NO;
     }
     app=[[Application alloc] init];
-    app.identifier=appIdentifier;
-    app.name=appIdentifier;
+    app.identifier=identifier;
+    app.name=name;
     
     Application *parent=curApp.parent;
     if (parent==nil) {
@@ -74,14 +74,22 @@
     return YES;
 }
 
--(void) addGroup
+-(void) deleteApplication
 {
-    Application *app=[[Application alloc] init];
-    app.name=[NSString stringWithFormat:NSLocalizedString(@"Group%i",@""),[applications count]];
-    app.identifier=[NSString stringWithFormat:@"%ld",(long)(100*(double)[[NSDate date] timeIntervalSince1970])];
-    app.parent=nil;
-    [applications addObject:[app retain]];
-    [applicationOutlineView reloadData];
+    if (curApp.parent) {
+        [curApp removeFromParent];
+    }
+    else
+    {
+        [applications removeObject:curApp];
+    }
+    if ([applications count]) {
+        curApp=[applications objectAtIndex:0];
+    }
+    else
+    {
+        curApp=nil;
+    }
 }
 
 -(void) save

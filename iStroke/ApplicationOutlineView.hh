@@ -17,4 +17,7 @@
 
 @property(retain) ApplicationManager *appManager;
 
+- (void)addApplication:(NSString *)identifier;
+-(void) addGroup;
+
 @end

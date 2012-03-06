@@ -79,12 +79,9 @@ using namespace iStroke;
 
 - (void)doneChooseWindow:(NSString *)process
 {
-    BOOL res=[applicationOutlineView.appManager addApplication:process];
-    if (res) {
-        [applicationOutlineView reloadData];
-    }
-    
-    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+	[applicationOutlineView addApplication:process];
+
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 	window.isVisible = YES;
 	NSCursor *cursor = [NSCursor arrowCursor];
 	[cursor set];
@@ -93,7 +90,7 @@ using namespace iStroke;
 
 -(IBAction) addGroup:(id)sender
 {
-    [applicationOutlineView.appManager addGroup];
+    [applicationOutlineView addGroup];
 }
 -(IBAction)test:(id)sender
 {

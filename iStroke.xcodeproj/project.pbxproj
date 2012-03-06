@@ -23,7 +23,6 @@
 		E7727A1A14E4544A00935AE7 /* Application.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7727A1914E4544A00935AE7 /* Application.mm */; };
 		E7727A1D14E4546C00935AE7 /* Stroke.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7727A1C14E4546C00935AE7 /* Stroke.mm */; };
 		E772DBF914E4424100A06FE6 /* Gesture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E772DBF914E4424100A06FE5 /* Gesture.mm */; };
-		E7AC6F5714E8F578008D0A2D /* GestureItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7AC6F5614E8F578008D0A2D /* GestureItem.mm */; };
 		E7AC6F5B14E90B70008D0A2D /* DrawStrokeCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */; };
 		E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.mm */; };
 		E7DCA2A815064A6400915E49 /* ApplicationManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7DCA2A615064A6400915E49 /* ApplicationManager.mm */; };
@@ -66,8 +65,6 @@
 		E7727A1C14E4546C00935AE7 /* Stroke.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Stroke.mm; sourceTree = "<group>"; };
 		E772DBF914E4424100A06FE5 /* Gesture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Gesture.mm; sourceTree = "<group>"; };
 		E772DBF914E4424100A06FE7 /* Gesture.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Gesture.hh; sourceTree = "<group>"; };
-		E7AC6F5514E8F578008D0A2D /* GestureItem.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GestureItem.hh; sourceTree = "<group>"; };
-		E7AC6F5614E8F578008D0A2D /* GestureItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GestureItem.mm; sourceTree = "<group>"; };
 		E7AC6F5914E90B70008D0A2D /* DrawStrokeCell.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawStrokeCell.hh; sourceTree = "<group>"; };
 		E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawStrokeCell.mm; sourceTree = "<group>"; };
 		E7C4ED6D14E6DF6D006444E0 /* DrawStrokeView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawStrokeView.hh; sourceTree = "<group>"; };
@@ -178,8 +175,6 @@
 				E750794614E2E70F00964C83 /* iStrokeAppDelegate.hh */,
 				E750794714E2E70F00964C83 /* iStrokeAppDelegate.mm */,
 				E750794914E2E70F00964C83 /* MainMenu.xib */,
-				E7AC6F5514E8F578008D0A2D /* GestureItem.hh */,
-				E7AC6F5614E8F578008D0A2D /* GestureItem.mm */,
 				E7AC6F5914E90B70008D0A2D /* DrawStrokeCell.hh */,
 				E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */,
 				E73AB3D414FFCC7B0040C595 /* NSTextFieldCell+VerticalCenter.h */,
@@ -283,7 +278,6 @@
 				E7727A1D14E4546C00935AE7 /* Stroke.mm in Sources */,
 				E772DBF914E4424100A06FE6 /* Gesture.mm in Sources */,
 				E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.mm in Sources */,
-				E7AC6F5714E8F578008D0A2D /* GestureItem.mm in Sources */,
 				E7AC6F5B14E90B70008D0A2D /* DrawStrokeCell.mm in Sources */,
 				E76D7B6C14F7F7A3004DA0E5 /* Action.mm in Sources */,
 				E771E71014FCEDAF00AF0524 /* Command.mm in Sources */,

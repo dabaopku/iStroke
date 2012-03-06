@@ -27,8 +27,8 @@
 -(Application *) findApplication:(NSString *)identifier;
 
 -(void) addAction:(id)action;
--(BOOL) addApplication:(NSString *)appIdentifier;
--(void) addGroup;
+-(BOOL) addApplication:(NSString *)identifier :(NSString *)name;
+-(void) deleteApplication;
 
 -(void) save;
 -(void) load;
