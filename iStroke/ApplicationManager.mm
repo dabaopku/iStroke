@@ -92,7 +92,7 @@
     }
 }
 
--(void) save
+-(NSString *) getAppSettingPath
 {
     NSFileManager *fm=[NSFileManager defaultManager];
     NSString *dir=[NSHomeDirectory() stringByAppendingFormat:@"/Library/iStroke/settings/"];
@@ -101,12 +101,20 @@
         if (![fm createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:nil]) 
         {
             NSLog(@"Error: Create folder failed %@",dir);
-            return;
+            return nil;
         }
     }
     
     NSString *path=[dir stringByAppendingString:@"applications.plist"];
-    
+    return path;
+}
+
+-(void) save
+{
+    NSString *path=[self getAppSettingPath];
+    if (!path) {
+        return;
+    }
     NSMutableArray *array=[NSMutableArray new];
     
     for (NSUInteger i=0,n=[applications count]; i<n; ++i) {
@@ -122,7 +130,21 @@
 
 -(void) load
 {
+    NSString *path=[self getAppSettingPath];
+    if (!path) {
+        return;
+    }
     
+    [applications release];
+    applications=[NSMutableArray new];
+    NSArray *array=[[NSArray alloc] initWithContentsOfFile:path];
+    
+    for (NSUInteger i=0,n=[array count]; i<n; ++i) {
+        NSDictionary *dict=[array objectAtIndex:i];
+        Application *app=[[Application alloc] initWithDict:dict];
+        app.parent=nil;
+        [applications addObject:app];
+    }
 }
 
 #pragma mark - NSOutlineView

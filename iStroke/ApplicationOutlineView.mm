@@ -77,4 +77,16 @@
     }
 }
 
+-(void) reloadData
+{
+    [super reloadData];
+    [appManager save];
+    [self expandItem:nil expandChildren:YES];
+}
+
+-(void) awakeFromNib
+{
+    [appManager load];
+    [self expandItem:nil expandChildren:YES];
+}
 @end

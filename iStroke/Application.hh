@@ -43,6 +43,6 @@ namespace iStroke {
 -(void) removeFromParent;
 
 -(NSDictionary *) save;
--(BOOL) load:(NSDictionary *)dict;
+-(id) initWithDict:(NSDictionary *)dict;
 
 @end

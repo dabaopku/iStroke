@@ -102,28 +102,39 @@
     return dict;
 }
 
--(BOOL) load:(NSDictionary *)dict
+-(id) initWithDict:(NSDictionary *)dict
 {
-    [name release];
-    if (!(name=[dict objectForKey:@"name"])) {
-        return NO;
-    }
-    [identifier release];
-    if (!(identifier=[dict objectForKey:@"id"])) {
-        return NO;
+    self=[super init];
+    
+    if (self) {
+        self.parent=nil;
+        self.name=[dict objectForKey:@"name"];
+        if (!name) {
+            return nil;
+        }
+        
+        self.identifier=[dict objectForKey:@"id"];
+        if (!identifier) {
+            [name release];
+            return nil;
+        }
+        
+        self.children=[NSMutableArray new];
+        NSArray *childArray=[dict objectForKey:@"child"];
+        if (!childArray) {
+            return self;
+        }
+        
+        for (NSUInteger i=0,n=[childArray count]; i<n; ++i) {
+            Application *app=[[Application alloc] initWithDict:[childArray objectAtIndex:i]];
+            if (app) {
+                [self addChildApplication:app];
+            }
+        }
     }
     
-    NSArray *childArray=[dict objectForKey:@"child"];
-    if (!childArray) {
-        return YES;
-    }
+    return self;    
     
-    for (NSUInteger i=0,n=[childArray count]; i<n; ++i) {
-        Application *app=[[Application alloc] init];
-        [app load:[childArray objectAtIndex:i]];
-        [self addChildApplication:app];
-    }
-    return YES;
 }
 
 @end
