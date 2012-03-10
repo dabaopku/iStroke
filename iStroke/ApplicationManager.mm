@@ -69,7 +69,7 @@
     }
     else
     {
-        [parent.children addObject:app];
+        [parent addChildApplication:app];
     }
     return YES;
 }

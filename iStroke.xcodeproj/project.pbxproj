@@ -24,6 +24,7 @@
 		E7727A1D14E4546C00935AE7 /* Stroke.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7727A1C14E4546C00935AE7 /* Stroke.mm */; };
 		E772DBF914E4424100A06FE6 /* Gesture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E772DBF914E4424100A06FE5 /* Gesture.mm */; };
 		E7AC6F5B14E90B70008D0A2D /* DrawStrokeCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */; };
+		E7BE9CCB150BD9E4002FDFAF /* ActionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BE9CCA150BD9E4002FDFAF /* ActionTableView.m */; };
 		E7C4ED6F14E6DF6D006444E0 /* DrawStrokeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.mm */; };
 		E7DCA2A815064A6400915E49 /* ApplicationManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7DCA2A615064A6400915E49 /* ApplicationManager.mm */; };
 		E7DCA2AC15064D0400915E49 /* ApplicationOutlineView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7DCA2AB15064D0400915E49 /* ApplicationOutlineView.mm */; };
@@ -67,6 +68,8 @@
 		E772DBF914E4424100A06FE7 /* Gesture.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Gesture.hh; sourceTree = "<group>"; };
 		E7AC6F5914E90B70008D0A2D /* DrawStrokeCell.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawStrokeCell.hh; sourceTree = "<group>"; };
 		E7AC6F5A14E90B70008D0A2D /* DrawStrokeCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawStrokeCell.mm; sourceTree = "<group>"; };
+		E7BE9CC9150BD9E4002FDFAF /* ActionTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionTableView.h; sourceTree = "<group>"; };
+		E7BE9CCA150BD9E4002FDFAF /* ActionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionTableView.m; sourceTree = "<group>"; };
 		E7C4ED6D14E6DF6D006444E0 /* DrawStrokeView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawStrokeView.hh; sourceTree = "<group>"; };
 		E7C4ED6E14E6DF6D006444E0 /* DrawStrokeView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawStrokeView.mm; sourceTree = "<group>"; };
 		E7DCA2A615064A6400915E49 /* ApplicationManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApplicationManager.mm; sourceTree = "<group>"; };
@@ -128,9 +131,10 @@
 		E750793A14E2E70F00964C83 /* iStroke */ = {
 			isa = PBXGroup;
 			children = (
+				E7BE9CC7150BD979002FDFAF /* Action */,
 				E76D7B6E14F80363004DA0E5 /* Application */,
-				E7C4ED7014E6DFF5006444E0 /* Interface */,
 				E7C4ED7114E6E00D006444E0 /* Gesture */,
+				E7C4ED7014E6DFF5006444E0 /* Interface */,
 				E7C4ED7214E6E021006444E0 /* Event */,
 				E750793B14E2E70F00964C83 /* Supporting Files */,
 				E771E71614FE541000AF0524 /* Localizable.strings */,
@@ -159,12 +163,21 @@
 				E7DCA2A615064A6400915E49 /* ApplicationManager.mm */,
 				E7DCA2AA15064D0400915E49 /* ApplicationOutlineView.hh */,
 				E7DCA2AB15064D0400915E49 /* ApplicationOutlineView.mm */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		E7BE9CC7150BD979002FDFAF /* Action */ = {
+			isa = PBXGroup;
+			children = (
 				E76D7B6A14F7F7A1004DA0E5 /* Action.hh */,
 				E76D7B6B14F7F7A2004DA0E5 /* Action.mm */,
 				E771E70E14FCEDAF00AF0524 /* Command.hh */,
 				E771E70F14FCEDAF00AF0524 /* Command.mm */,
+				E7BE9CC9150BD9E4002FDFAF /* ActionTableView.h */,
+				E7BE9CCA150BD9E4002FDFAF /* ActionTableView.m */,
 			);
-			name = Application;
+			name = Action;
 			sourceTree = "<group>";
 		};
 		E7C4ED7014E6DFF5006444E0 /* Interface */ = {
@@ -284,6 +297,7 @@
 				E73AB3D614FFCC7B0040C595 /* NSTextFieldCell+VerticalCenter.m in Sources */,
 				E7DCA2A815064A6400915E49 /* ApplicationManager.mm in Sources */,
 				E7DCA2AC15064D0400915E49 /* ApplicationOutlineView.mm in Sources */,
+				E7BE9CCB150BD9E4002FDFAF /* ActionTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
