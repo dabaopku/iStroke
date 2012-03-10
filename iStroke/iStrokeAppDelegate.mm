@@ -54,6 +54,8 @@ using namespace iStroke;
     if(preStroke){
         delete preStroke;
     }
+    
+    [self save:nil];
 }
 
 - (IBAction)toggleTrack:(NSButton *)sender {

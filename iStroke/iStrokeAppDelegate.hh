@@ -24,8 +24,7 @@
     IBOutlet NSWindow *drawStrokeWindow;
     IBOutlet DrawStrokeView *drawStrokeView;
     IBOutlet NSTableView *tableStroke;
-    IBOutlet ApplicationOutlineView *applicationOutlineView;
-    
+    IBOutlet ApplicationOutlineView *applicationOutlineView;    
 }
 
 @property(assign) IBOutlet NSWindow *window;

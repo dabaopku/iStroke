@@ -10,6 +10,7 @@
 #import "Application.hh"
 #import "NSTextFieldCell+VerticalCenter.h"
 
+@class ActionTableView;
 @interface ApplicationManager:NSObject
 <NSOutlineViewDataSource,NSOutlineViewDelegate,NSTableViewDataSource,NSTableViewDelegate> {
     
@@ -17,7 +18,7 @@
     Application * curApp;
     
     IBOutlet CommandTypeDelegate *commandTypeDelegate;
-    IBOutlet NSTableView * gestureTableView;
+    IBOutlet ActionTableView * actionTableView;
     IBOutlet NSOutlineView *applicationOutlineView;
 }
 

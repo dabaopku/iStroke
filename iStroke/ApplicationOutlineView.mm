@@ -80,7 +80,6 @@
 -(void) reloadData
 {
     [super reloadData];
-    [appManager save];
     [self expandItem:nil expandChildren:YES];
 }
 

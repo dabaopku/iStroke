@@ -8,6 +8,7 @@
 
 #import "ApplicationManager.hh"
 #import "Application.hh"
+#import "ActionTableView.hh"
 
 @implementation ApplicationManager
 
@@ -147,7 +148,10 @@
     }
     
     if([applications count]>0)
+    {
         curApp=[applications objectAtIndex:0];
+        actionTableView.app=curApp;
+    }
 }
 
 #pragma mark - NSOutlineView
@@ -196,7 +200,8 @@
 {
     [curApp release];
     curApp=[item retain];
-    [gestureTableView reloadData];
+    actionTableView.app=curApp;
+    [actionTableView reloadData];
     return YES;
 }
 

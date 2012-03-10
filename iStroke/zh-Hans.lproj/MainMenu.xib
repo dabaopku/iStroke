@@ -1392,7 +1392,6 @@
 														<int key="NSvFlags">-2147483392</int>
 														<string key="NSFrame">{{1, 362}, {391, 15}}</string>
 														<reference key="NSSuperview" ref="902648261"/>
-														<reference key="NSNextKeyView"/>
 														<int key="NSsFlags">1</int>
 														<reference key="NSTarget" ref="902648261"/>
 														<string key="NSAction">_doScroller:</string>
@@ -2110,14 +2109,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">gestureTableView</string>
-						<reference key="source" ref="163057030"/>
-						<reference key="destination" ref="179209629"/>
-					</object>
-					<int key="connectionID">817</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">appManager</string>
 						<reference key="source" ref="355779344"/>
 						<reference key="destination" ref="163057030"/>
@@ -2139,6 +2130,22 @@
 						<reference key="destination" ref="215659978"/>
 					</object>
 					<int key="connectionID">820</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">appManager</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="163057030"/>
+					</object>
+					<int key="connectionID">821</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">actionTableView</string>
+						<reference key="source" ref="163057030"/>
+						<reference key="destination" ref="179209629"/>
+					</object>
+					<int key="connectionID">822</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3646,7 +3653,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">820</int>
+			<int key="maxID">822</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

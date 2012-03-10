@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-
+@class Application;
 @interface ActionTableView : NSTableView {
-    
+    Application *app;
 }
 
+@property(retain) Application *app;
 @end

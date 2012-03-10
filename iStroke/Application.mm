@@ -81,7 +81,6 @@
 {
     if (parent) {
         [parent.children removeObject:self];
-        NSLog(@"delete");
     }
     parent=nil;
 }

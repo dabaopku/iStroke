@@ -6,15 +6,17 @@
 //  Copyright 2012年 PKU. All rights reserved.
 //
 
-#import "ActionTableView.h"
-
+#import "ActionTableView.hh"
+#import "Application.hh"
 
 @implementation ActionTableView
 
+@synthesize app;
 
 -(void) keyDown:(NSEvent *)event
 {
     BOOL deleteKeyEvent = NO;
+    BOOL dealt=NO;
     
     if ([event type] == NSKeyDown)
     {
@@ -34,9 +36,15 @@
     
     if (deleteKeyEvent)
     {
-        NSLog(@"Delete");
+        if([[self selectedRowIndexes] count]>0)
+        {
+            [app.actions removeObjectsAtIndexes:[self selectedRowIndexes]];             
+            [self reloadData];
+            dealt=YES;
+        }
     }
-    else
+    
+    if(!dealt)
     {
         [super keyDown:event];
     }
