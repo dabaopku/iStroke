@@ -145,6 +145,9 @@
         app.parent=nil;
         [applications addObject:app];
     }
+    
+    if([applications count]>0)
+        curApp=[applications objectAtIndex:0];
 }
 
 #pragma mark - NSOutlineView

@@ -24,4 +24,7 @@
 
 -(id) initWithStroke:(Stroke *)s;
 
+-(NSDictionary *) save;
+-(id) initWithDict:(NSDictionary *)dict;
+
 @end

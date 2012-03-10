@@ -32,11 +32,35 @@
 
 - (void)dealloc
 {
-	[gesture release];
-    [image release];
-    [name release];
-    [cmd release];
+	if(gesture) [gesture release];
+    if(image) [image release];
+    if(name) [name release];
+    if(cmd) [cmd release];
     [super dealloc];
+}
+
+-(NSDictionary *) save
+{
+    NSMutableDictionary *dict=[NSMutableDictionary new];
+    [dict setObject:name forKey:@"name"];
+    [dict setObject:@"nil" forKey:@"cmd"];
+    [dict setObject:[gesture save] forKey:@"gesture"];
+    
+    return dict;
+}
+
+-(id) initWithDict:(NSDictionary *)dict
+{
+    self=[super init];
+    if(self)
+    {
+        self.name=[dict objectForKey:@"name"];
+        self.gesture=[[Gesture alloc] initWithDict:[dict objectForKey:@"gesture"]];
+        cmd=nil;
+        self.image=[gesture loadImage];
+    }
+    
+    return self;
 }
 
 @end

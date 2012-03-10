@@ -41,7 +41,7 @@ using namespace iStroke;
     
     
     [applicationOutlineView registerForDraggedTypes:
-     [NSArray arrayWithObject:ApplicationPasteType] ];
+        [NSArray arrayWithObject:ApplicationPasteType] ];
     
 }
 

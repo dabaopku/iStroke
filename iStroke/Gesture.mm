@@ -102,4 +102,48 @@
     NSImage *img=[[NSImage alloc] initWithContentsOfFile:file];
     return img;
 }
+
+-(NSDictionary *) save
+{
+    NSMutableDictionary *dict=[NSMutableDictionary new];
+    [dict setObject:[NSNumber numberWithLong:key] forKey:@"key"];
+    
+    NSMutableArray *stk=[NSMutableArray new];
+    [dict setObject:stk forKey:@"stoke"];
+    
+    for (int i=0,n=stroke->size(); i<n; ++i) {
+        [stk addObject:[NSNumber numberWithDouble:stroke->x(i)]];
+        [stk addObject:[NSNumber numberWithDouble:stroke->y(i)]];
+    }
+    
+    [stk release];
+    return dict;
+}
+
+-(id) initWithDict:(NSDictionary *)dict
+{
+    self=[super init];
+    if(self)
+    {
+        NSNumber *num=[dict objectForKey:@"key"];
+        if(!num)
+            return nil;
+        self.key=[num longValue];
+        
+        NSArray *arr=[dict objectForKey:@"stoke"];
+        self.stroke=new iStroke::Stroke;
+        if(arr)
+        {
+            for (NSInteger i=0,n=[arr count]/2; i<n; ++i) {
+                double x=[[arr objectAtIndex:2*i] doubleValue];
+                double y=[[arr objectAtIndex:2*i+1] doubleValue];
+                self.stroke->addPoint(x, y);
+            }
+            self.stroke->finish();
+        }
+    }
+    
+    return self;
+}
+
 @end

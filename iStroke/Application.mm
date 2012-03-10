@@ -99,6 +99,15 @@
         }
         [childArray release];
     }
+    
+    if ([actions count]>0) {
+        NSMutableArray *actionArray=[NSMutableArray new];
+        [dict setObject:actionArray forKey:@"action"];
+        for (NSUInteger i=0,n=[actions count]; i<n; ++i) {
+            [actionArray addObject:[(Action*)[actions objectAtIndex:i] save]];
+        }
+        [actionArray release];
+    }
     return dict;
 }
 
@@ -110,7 +119,7 @@
         self.parent=nil;
         self.name=[dict objectForKey:@"name"];
         if (!name) {
-            return nil;
+            self.name=@"No name";
         }
         
         self.identifier=[dict objectForKey:@"id"];
@@ -119,16 +128,27 @@
             return nil;
         }
         
+        self.actions=[NSMutableArray new];
         self.children=[NSMutableArray new];
-        NSArray *childArray=[dict objectForKey:@"child"];
-        if (!childArray) {
-            return self;
-        }
         
-        for (NSUInteger i=0,n=[childArray count]; i<n; ++i) {
-            Application *app=[[Application alloc] initWithDict:[childArray objectAtIndex:i]];
-            if (app) {
-                [self addChildApplication:app];
+        NSArray *childArray=[dict objectForKey:@"child"];
+        if (childArray) {        
+            for (NSUInteger i=0,n=[childArray count]; i<n; ++i) {
+                Application *app=[[Application alloc] initWithDict:[childArray objectAtIndex:i]];
+                if (app) {
+                    [self addChildApplication:app];
+                    [app release];
+                }
+            }
+        }
+        NSArray *actionArray=[dict objectForKey:@"action"];
+        if (actionArray) {
+            for (NSUInteger i=0,n=[actionArray count]; i<n; ++i) {
+                Action *act=[[Action alloc] initWithDict:[actionArray objectAtIndex:i]];
+                if (act) {
+                    [actions addObject:act];
+                    [act release];
+                }
             }
         }
     }

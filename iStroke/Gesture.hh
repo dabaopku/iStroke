@@ -6,8 +6,6 @@
 //  Copyright 2012年 PKU. All rights reserved.
 //
 
-#include <vector>
-#include <string>
 #import "Stroke.hh"
 using namespace iStroke;
 
@@ -18,7 +16,6 @@ using namespace iStroke;
 
 @private
     Stroke * stroke;
-    std::string name;
     long key;
 }
 @property(assign) long key;
@@ -28,5 +25,8 @@ using namespace iStroke;
 
 -(bool) saveImage;
 -(NSImage *) loadImage;
+
+-(NSDictionary *) save;
+-(id) initWithDict:(NSDictionary *)dict;
 
 @end
